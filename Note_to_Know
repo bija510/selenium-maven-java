@@ -10,7 +10,7 @@ How To run all test class at one time from POM.XML file or from COMMAND LINE
 3. To Run --> R-click on pom.xml-->Run as--> Maven test
 
 4. To run from terminal --> cd project path --> mvn clean--> mvn test
-
+8-10-2020 bijay lov subi
 Note:- we need this in pom.xml at END....END before </project> after </dependencies>
 
 <build>
