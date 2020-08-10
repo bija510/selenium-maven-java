@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testNG.p04Test"/>
+      <class name="selPackTest.Test_Facebook"/>
+      <class name="selPackTest.S01_facebookTest"/>
+      <class name="testNG.p03_AssertTest"/>
+      <class name="testNG.p02_QaClickAcademyTest"/>
+      <class name="testNG.p05Test"/>
+      <class name="testNG.p01_AutoDemoTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

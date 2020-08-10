@@ -1,0 +1,28 @@
+****************************************************************************
+How To run all test class at one time from POM.XML file or from COMMAND LINE
+****************************************************************************
+
+1. Create Simple Maven project give same project name at end in like 
+  Example:-Group id = Maven_Seleniums & Artifact id = Maven_Seleniums ----> then Finished  
+ 
+2. Add "Test" at the end of every class name or in the Begnning---then only it will run
+
+3. To Run --> R-click on pom.xml-->Run as--> Maven test
+
+4. To run from terminal --> cd project path --> mvn clean--> mvn test
+
+Note:- we need this in pom.xml at END....END before </project> after </dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
