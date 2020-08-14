@@ -1,4 +1,4 @@
-package testNG;
+package demoAuto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
@@ -9,18 +9,21 @@ import org.testng.annotations.Test;
 import org.apache.logging.log4j.message.LoggerNameAwareMessage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-public class p04Test{
+public class Log4jDemoTest{
 	
-	private static org.apache.logging.log4j.Logger logger = LogManager.getLogger(p04Test.class);
+	private static org.apache.logging.log4j.Logger logger = LogManager.getLogger(Log4jDemoTest.class);
 	static WebDriver driver = null;
 	
 	@BeforeMethod
 	public static void start() {
 		
 		WebDriverManager.firefoxdriver().setup();
-		logger.info("ChromeDriver setup start");
+		logger.info("Test case start..........");
+		logger.info("Firefox Browser open");
+		
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
+		
 		logger.info("ChromeDriver setup successfully and Maximized");
 	}
 	@Test
@@ -34,7 +37,7 @@ public class p04Test{
 		Thread.sleep(3000);
 		logger.info("3 second waited successfully");
 		driver.quit();
-		logger.info("Test case End and passed successfully");
+		logger.info("Test case End.......");
 	}
 
 

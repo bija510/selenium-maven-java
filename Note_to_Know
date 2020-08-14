@@ -26,3 +26,79 @@ Note:- we need this in pom.xml at END....END before </project> after </dependenc
         </plugin>
     </plugins>
 </build>
+
+*****************************************************
+To Set Up the Log4j2 We Need this to fully set up
+MAIN IMP NOTE:- Update maven Project + Project-->clean
+******************************************************
+<dependency>
+	<groupId>org.apache.logging.log4j</groupId>
+	<artifactId>log4j-api</artifactId>
+	<version>2.11.1</version>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.logging.log4j</groupId>
+	<artifactId>log4j-core</artifactId>
+	<version>2.11.1</version>
+</dependency>
+
+*****************************************************************************
+1. this is the log4j2.xml we need to put this inside the src/main/java
+2. Keep log4j.xml outside the package
+3. In line num:-72 ---><Logger name="demoAuto" level="trace" additivity="false">
+4. Change the package Name put <<<Logger name="Whatever the package name" >>>
+5. and line 59 give file name =====>MyLogs2.log yup replace this name
+*****************************************************************************
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
+import org.apache.logging.log4j.message.LoggerNameAwareMessage;
+*****************************************************************************
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">logs</Property>
+    </Properties>
+ 
+    <Appenders>
+        <RollingFile name="fileLogger" fileName="${basePath}/MyLogs2.log" filePattern="${basePath}/app-info-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            
+        </RollingFile>
+ 
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout   pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="demoAuto" level="trace" additivity="false">
+            <appender-ref ref="fileLogger" level="trace" />
+        </Logger>
+        <Root level="trace" additivity="false">
+            <appender-ref ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+***************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

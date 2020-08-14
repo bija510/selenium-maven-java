@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class tab_switch extends Base { // extends Base ===> This is called Inheritance
+public class Register extends Base { // extends Base ===> This is called Inheritance
  
 	
 	@Test
