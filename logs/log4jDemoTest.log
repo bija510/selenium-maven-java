@@ -1,0 +1,5 @@
+[INFO ] 2020-08-14 18:58:47.783 [main] Log4jDemoTest - We are trying to open Firefox driver
+[INFO ] 2020-08-14 18:58:52.683 [main] Log4jDemoTest - Firefox browser open successfully
+[INFO ] 2020-08-14 18:58:52.693 [main] Log4jDemoTest - Window just got Maximize
+[INFO ] 2020-08-14 18:58:54.295 [main] Log4jDemoTest - Amazon.com website got open
+[INFO ] 2020-08-14 18:58:59.697 [main] Log4jDemoTest - --Passed Successfully--

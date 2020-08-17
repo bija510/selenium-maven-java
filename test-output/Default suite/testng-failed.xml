@@ -3,14 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="demoAuto.tab_switch">
+      <class name="testNG.zTemp">
         <methods>
-          <include name="pagetab"/>
-          <include name="closeLast"/>
-          <include name="open"/>
-          <include name="close"/>
+          <include name="test11"/>
         </methods>
-      </class> <!-- demoAuto.tab_switch -->
+      </class> <!-- testNG.zTemp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

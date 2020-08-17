@@ -18,26 +18,26 @@ public class Log4jDemoTest{
 	public static void start() {
 		
 		WebDriverManager.firefoxdriver().setup();
-		logger.info("Test case start..........");
-		logger.info("Firefox Browser open");
-		
+		logger.info("We are trying to open Firefox driver");	
 		driver = new FirefoxDriver();
-		driver.manage().window().maximize();
 		
-		logger.info("ChromeDriver setup successfully and Maximized");
+		logger.info("Firefox browser open successfully");
+		
+		driver.manage().window().maximize();
+		logger.info("Window just got Maximize");
+		
 	}
 	@Test
 	public static void test() {
 		driver.get("https://www.amazon.com/");
-		logger.info("Url Open successfully");
+        logger.info("Amazon.com website got open");
 	}
 
 	@AfterMethod
 	public  static void end() throws InterruptedException {
 		Thread.sleep(3000);
-		logger.info("3 second waited successfully");
 		driver.quit();
-		logger.info("Test case End.......");
+        logger.info("--Passed Successfully--");
 	}
 
 

@@ -86,6 +86,17 @@ import org.apache.logging.log4j.message.LoggerNameAwareMessage;
 </Configuration>
 
 ***************************************************************************************************
+Next...........
+1. We will make SmokeTest.xml and RegressionTest.xml
+2. DataDriven with properties file <---------Excel file--->Apache--POI------------>
+3. Upload file with --sample.txt inside--Include folder-->
+4. Utilites or library concept all in the utility and we called from there
+5. page object model concept
+6. Multiple browser concept for Chrome, firefox and Chromium and IE---BrowserUtility in Utilites
+7. .gitIgnore
+8. Jenkins for CICD
+
+
 
 
 

@@ -1,6 +1,0 @@
-[INFO ] 2020-08-14 11:00:04.851 [main] Log4jDemoTest - Test case start..........
-[INFO ] 2020-08-14 11:00:04.858 [main] Log4jDemoTest - Firefox Browser open
-[INFO ] 2020-08-14 11:00:10.259 [main] Log4jDemoTest - ChromeDriver setup successfully and Maximized
-[INFO ] 2020-08-14 11:00:11.038 [main] Log4jDemoTest - Url Open successfully
-[INFO ] 2020-08-14 11:00:14.041 [main] Log4jDemoTest - 3 second waited successfully
-[INFO ] 2020-08-14 11:00:15.998 [main] Log4jDemoTest - Test case End.......
