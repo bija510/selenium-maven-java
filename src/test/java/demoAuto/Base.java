@@ -34,7 +34,7 @@ public class Base {
 	@AfterTest
 	public void close( ) throws InterruptedException {
 		Thread.sleep(2000);
-		driver.close();
+		driver.quit();
 		driver = null;
 	}
 	
@@ -56,7 +56,9 @@ public class Base {
 		if(ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(src, new File("C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\Maven_Seleniums\\Screenshot\\"+ failScreenShotName +".png"));//result+result.getName()
+			//FileUtils.copyFile(src, new File("C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\Maven_Seleniums\\Screenshot\\"+ failScreenShotName +".png"));//result+result.getName()
+			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ failScreenShotName +".png"));//result+result.getName()
+			
 		}
 	}
 	
