@@ -23,7 +23,7 @@ public class BrowserUtility {
 	public static WebDriver driver;
 	public Properties prop ;
 	
-	public WebDriver initalizeDriver() throws IOException 
+	public WebDriver OpenDesiredBrowserAndInitalizeDriver() throws IOException 
 	{
 		//Reading data_properties file from Data Folder
 		prop =new Properties();         

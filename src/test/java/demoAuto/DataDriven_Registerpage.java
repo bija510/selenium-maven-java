@@ -24,15 +24,12 @@ public class DataDriven_Registerpage {
 		Ans. Because in future in data change we don't want to change in test case rather we do in properties file
 		**********************************************************************************************************/
 		Properties prop = new Properties();
-	    FileInputStream fis = new FileInputStream("../Maven_Seleniums/Data/MainData.properties");
+	    FileInputStream fis = new FileInputStream("../Maven_Seleniums/Data/Config.properties");
 	    prop.load(fis);
 	    String URL = prop.getProperty("url");
 	    String firstName =prop.getProperty("FirstName");
 	    String lastName = prop.getProperty("LastName");
-	    String address = prop.getProperty("Address");
-	    String emailAddress = prop.getProperty("EmailAddress");
-	    String phone = prop.getProperty("Phone");
-	    String password = prop.getProperty("Password");
+	   
 	    
 	    WebDriverManager.chromedriver().setup();
 	    WebDriver driver = new ChromeDriver();

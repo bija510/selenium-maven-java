@@ -17,18 +17,27 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utilites_library.BrowserUtility;
 
-public class Base {
+public class Base extends BrowserUtility{
 	
 	
-	WebDriver driver = null;
 	@BeforeTest
-	public void open() {
-	WebDriverManager.chromedriver().setup();
-	driver= new ChromeDriver();
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //this is applicable to all the test
+	public void initialize() throws IOException 
+	{
+		driver = OpenDesiredBrowserAndInitalizeDriver(); 
+		driver.manage().window().maximize();
+	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); 
 	}
+	
+//	WebDriver driver = null;
+//	@BeforeTest
+//	public void open() {
+//	WebDriverManager.chromedriver().setup();
+//	driver= new ChromeDriver();
+//    driver.manage().window().maximize();
+//    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //this is applicable to all the test
+//	}
 	
 	
 	@AfterTest
