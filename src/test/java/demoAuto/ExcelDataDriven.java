@@ -1,10 +1,12 @@
 package demoAuto;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import utilites_library.Xls_Reader;
 
-public class ExcelDataDriven {
+public class ExcelDataDriven extends Base {
 
 	@Test
 	public void readingDataFromExcel() {
@@ -22,5 +24,17 @@ public class ExcelDataDriven {
 	System.out.println(lastName );
 	System.out.println(address );
 	
+
+	driver.get("http://demo.automationtesting.in/Register.html"); 
+	//===>  //input[@placeholder='last Name']
+
+	WebElement lastNameTextBox = driver.findElement(By.cssSelector("input[placeholder='Last Name']"));
+	lastNameTextBox.sendKeys(lastName);
+
+		
+		
+		
 	}
-}
+	
+	}
+

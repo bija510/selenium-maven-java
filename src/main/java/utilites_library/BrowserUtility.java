@@ -27,19 +27,19 @@ public class BrowserUtility {
 	{
 		//Reading data_properties file from Data Folder
 		prop =new Properties();         
-		FileInputStream fis = new FileInputStream("../Maven_Seleniums/Data/MainData.properties");
+		FileInputStream fis = new FileInputStream("../Maven_Seleniums/Data/Config.properties");
 	    prop.load(fis);
-		String browserName = prop.getProperty("browser");
+		String browserName = prop.getProperty("browser"); //CHROME
 		
-		if(browserName.equals("CHROME")) {
+		if(browserName.equalsIgnoreCase("CHROME")) {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		
-		}else if(browserName.equals("FIREFOX")) {
+		}else if(browserName.equalsIgnoreCase("FIREFOX")) {
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
 		
-		}else if(browserName.equals("IE")) {
+		}else if(browserName.equalsIgnoreCase("IE")) {
 	
 		WebDriverManager.iedriver().setup();
 		driver = new InternetExplorerDriver();
