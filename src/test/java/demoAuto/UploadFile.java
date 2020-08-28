@@ -7,7 +7,7 @@ public class UploadFile extends Base {
 
 	@Test
 	public void uploadTest() throws InterruptedException {
-	
+	    //Just a comment
 		driver.navigate().to("http://demo.automationtesting.in/FileUpload.html");        
         String uploadFilePath = System.getProperty("user.dir")+"\\Include\\Upload file.pdf";
 
