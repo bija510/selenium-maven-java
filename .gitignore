@@ -1,5 +1,5 @@
 /test-output/*
-/target/
+/target/*
 *.png
 *.xlsx
 *.properties
@@ -120,3 +120,4 @@ bazel-testlogs
 
 /.vscode/
 /.scannerwork/
+/target/
