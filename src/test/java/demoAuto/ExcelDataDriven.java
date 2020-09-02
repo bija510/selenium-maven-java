@@ -26,15 +26,11 @@ public class ExcelDataDriven extends Base {
 	
 
 	driver.get("http://demo.automationtesting.in/Register.html"); 
-	//===>  //input[@placeholder='last Name']
 
 	WebElement lastNameTextBox = driver.findElement(By.cssSelector("input[placeholder='Last Name']"));
 	lastNameTextBox.sendKeys(lastName);
 
-		
-		
-		
-	}
+	  }
 	
 	}
 

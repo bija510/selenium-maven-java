@@ -52,23 +52,6 @@ public class p01_AutoDemoTest {
 	public void test3() throws InterruptedException { //method name = test3
 		Thread.sleep(3000);
 		driver.quit();
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }

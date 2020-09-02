@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DataDriven_Registerpage {
+public class DataDriven_Registerpage extends Base{
 /*************************************************
   This is called DataDriven from Properties file
 **************************************************/	
@@ -29,13 +29,12 @@ public class DataDriven_Registerpage {
 	    String URL = prop.getProperty("url");
 	    String firstName =prop.getProperty("FirstName");
 	    String lastName = prop.getProperty("LastName");
+	     
+//	    WebDriverManager.chromedriver().setup();
+//	    WebDriver driver = new ChromeDriver();
+//	    driver.manage().window().maximize();
 	   
-	    
-	    WebDriverManager.chromedriver().setup();
-	    WebDriver driver = new ChromeDriver();
-	    
-	    driver.get(URL);
-	    driver.manage().window().maximize();
+	    driver.get(URL);	
 	    
 	    WebElement firstNameTextBox = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
 		firstNameTextBox.sendKeys(firstName);
