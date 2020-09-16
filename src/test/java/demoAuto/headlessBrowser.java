@@ -45,7 +45,7 @@ public class headlessBrowser {
 	File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ "googlescr.png"));//result+result.getName()
 	
-				
+	driver.quit();			
 	}
 	
 }

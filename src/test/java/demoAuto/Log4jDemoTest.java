@@ -31,6 +31,7 @@ public class Log4jDemoTest{
 	public static void test() {
 		driver.get("https://www.amazon.com/");
         logger.info("Amazon.com website got open");
+        driver.quit();
 	}
 
 	@AfterMethod
