@@ -27,7 +27,7 @@ public class BrowserUtility {
 	{
 		//Reading data_properties file from Data Folder
 		prop =new Properties();         
-		FileInputStream fis = new FileInputStream("../Maven_Seleniums/Data/Config.properties");
+		FileInputStream fis = new FileInputStream("../Maven_Seleniums/Configurations/Config.properties");
 	    prop.load(fis);
 		String browserName = prop.getProperty("browser"); //CHROME
 		
