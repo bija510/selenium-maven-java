@@ -1,10 +1,5 @@
-[INFO ] 2020-09-01 21:45:30.012 [main] Log4jDemoTest - We are trying to open Firefox driver
-[INFO ] 2020-09-01 21:45:33.532 [main] Log4jDemoTest - Firefox browser open successfully
-[INFO ] 2020-09-01 21:45:33.553 [main] Log4jDemoTest - Window just got Maximize
-[INFO ] 2020-09-01 21:45:34.680 [main] Log4jDemoTest - Amazon.com website got open
-[INFO ] 2020-09-01 21:45:39.099 [main] Log4jDemoTest - --Passed Successfully--
-[INFO ] 2020-09-01 21:49:09.037 [main] Log4jDemoTest - We are trying to open Firefox driver
-[INFO ] 2020-09-01 21:49:11.861 [main] Log4jDemoTest - Firefox browser open successfully
-[INFO ] 2020-09-01 21:49:11.868 [main] Log4jDemoTest - Window just got Maximize
-[INFO ] 2020-09-01 21:49:13.201 [main] Log4jDemoTest - Amazon.com website got open
-[INFO ] 2020-09-01 21:49:17.618 [main] Log4jDemoTest - --Passed Successfully--
+[INFO ] 2020-10-09 12:00:30.167 [main] Log4jDemoTest - We are trying to open Firefox driver
+[INFO ] 2020-10-09 12:00:33.000 [main] Log4jDemoTest - Firefox browser open successfully
+[INFO ] 2020-10-09 12:00:33.031 [main] Log4jDemoTest - Window just got Maximize
+[INFO ] 2020-10-09 12:00:33.694 [main] Log4jDemoTest - Amazon.com website got open
+[INFO ] 2020-10-09 12:00:37.744 [main] Log4jDemoTest - --Passed Successfully--
