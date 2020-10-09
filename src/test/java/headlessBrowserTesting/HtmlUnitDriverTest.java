@@ -1,4 +1,4 @@
-package demoAuto;
+package headlessBrowserTesting;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 //
 import org.testng.annotations.Test;
 
-public class headless_HtmlUnitDriver {
+public class HtmlUnitDriverTest {
 /*********************************************************************************
 	 * This is byDefault headless browser & Num #1 fastest browser Only in selenium
 	 * Completely implemented using java just need dependency in pom.XML

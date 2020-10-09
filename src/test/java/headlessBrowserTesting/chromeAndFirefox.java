@@ -1,4 +1,4 @@
-package demoAuto;
+package headlessBrowserTesting;
 import java.io.File;
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class headlessBrowser {
+public class chromeAndFirefox {
 	/****************************************************************************
 	 * Advantage >>-->Fast and usually good in CICD Jenkin it got performed
 	 * Disadvantage >>--> hard to debug no UI, no user used App without UI,
