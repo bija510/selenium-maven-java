@@ -2,7 +2,7 @@ package POM_DesignPattern;
 
 import org.testng.annotations.Test;
 
-import demoAuto.Base;
+import utilites_library.Base;
 
 public class FbSignUp_POM_Test extends Base{
 

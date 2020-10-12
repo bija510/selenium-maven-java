@@ -1,9 +1,11 @@
-package demoAuto;
+package seleniumWebdriver;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class WindowAuthPopUpTest  extends Base {
+import utilites_library.Base;
+
+public class S23_WindowAuthPopUpTest  extends Base {
 
 	@Test
 	public void setPopUpUserNamePwd() {

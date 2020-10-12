@@ -1,11 +1,13 @@
-package demoAuto;
+package seleniumWebdriver;
 
 import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class EncodedAndDecodedPasswordTest extends Base{
+import utilites_library.Base;
+
+public class S25_setEncryptedPassword extends Base{
 
 	@Test
 	public void setEncryptedPassword() {

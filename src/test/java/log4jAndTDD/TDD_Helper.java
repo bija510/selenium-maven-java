@@ -1,4 +1,4 @@
-package demoAuto;
+package log4jAndTDD;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

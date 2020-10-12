@@ -1,4 +1,5 @@
-package demoAuto;
+package seleniumWebdriver;
+
 import java.util.Iterator;
 import java.util.Set;
 
@@ -6,12 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class MultipleWindowAndAlert extends Base{
-	script_qaClickLine1 openUrl = new script_qaClickLine1(); //object creation
-	
+import utilites_library.Base;
+
+public class S14_MultipleWindow_ChildWindow extends Base{
+
 	@Test
 	public void switchWndow() throws InterruptedException {		
-		openUrl.openURL();
+		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		WebElement openWindowButton = driver.findElement(By.cssSelector("button[id='openwindow']"));
 		openWindowButton.click();
 		
@@ -33,7 +35,7 @@ public class MultipleWindowAndAlert extends Base{
 			}
 	@Test
 	public void openNewTab() {
-		openUrl.openURL();
+		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		driver.findElement(By.xpath("//a[@id='opentab']")).click();
 		
 		Set<String> ids =driver.getWindowHandles();
@@ -45,29 +47,8 @@ public class MultipleWindowAndAlert extends Base{
 		driver.switchTo().window(childWindow);		
 		System.out.println(driver.findElement(By.xpath("//span[contains(text(),'World class')]")).getText());
 	}
-	@Test
-	public void acceptAlert() throws InterruptedException {
-		openUrl.openURL(); 
-		WebElement alertBtn = driver.findElement(By.xpath("//input[@id='alertbtn']"));
-		alertBtn.click();
-		Thread.sleep(3000);
-		//driver.switchTo().alert().accept();
-		driver.switchTo().alert().dismiss();
-		
-	      }
-		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+}
+
+

@@ -4,8 +4,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import demoAuto.Base;
+import utilites_library.Base;
 
 public class autoit_FileUploadTest extends Base{
 

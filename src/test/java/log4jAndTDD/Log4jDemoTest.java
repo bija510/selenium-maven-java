@@ -1,4 +1,4 @@
-package demoAuto;
+package log4jAndTDD;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;

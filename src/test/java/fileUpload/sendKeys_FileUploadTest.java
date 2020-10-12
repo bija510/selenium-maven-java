@@ -2,8 +2,7 @@ package fileUpload;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
-import demoAuto.Base;
+import utilites_library.Base;
 
 public class sendKeys_FileUploadTest extends Base{
 
