@@ -1,22 +1,18 @@
 package seleniumWebdriver;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import utilites_library.Base;
 
-public class S22_TryCatchFinally {
+public class S22_TryCatchFinally extends Base{
 
-	public static void main(String[] args) throws InterruptedException {
-
-		WebDriver driver = null;
+	@Test
+	public void tryCatch() throws InterruptedException {
 
 		try {
-			System.setProperty("webdriver.chrome.driver", "C:\\Drivertesting\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
-
-			driver.get("https://www.facebook.com/");
-			WebElement firstName = driver.findElement(By.id("u_0_m"));
+			driver.get("https://www.facebook.com/signup");
+			WebElement firstName = driver.findElement(By.xpath("//input[@id='u_0_n']"));
 			firstName.sendKeys("subi");
 		}
 		catch (Exception e) {
