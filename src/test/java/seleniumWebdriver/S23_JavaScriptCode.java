@@ -1,27 +1,46 @@
 package seleniumWebdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import utilites_library.Base;
 
-public class S23_JavaScriptCode {
+public class S23_JavaScriptCode extends Base{
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void allJSFunction() throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Drivertesting\\chromedriver_win32\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-
-		driver.navigate().to("http://demo.automationtesting.in/Register.html");
-        driver.manage().window().maximize();
-        
-        Thread.sleep(3000);
-        
         JavascriptExecutor JS = (JavascriptExecutor)driver;
-        JS.executeScript("window.scrollBy(0,1000)"); //Scroll Down
         
-        Thread.sleep(3000);
-        JS.executeScript("window.scrollBy(0,-1000)"); // Scroll UP
-
+        // 1.open Browser URL
+        JS.executeScript(("window.location = 'http://demo.automationtesting.in/Register.html';"));
+        
+        // 2.setText()
+        String fname = "David";
+        WebElement firstNameTxtBx = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
+        JS.executeScript("arguments[0].value='"+ fname +"';", firstNameTxtBx);
+        
+        // 3.getText()
+        WebElement pageHeader = driver.findElement(By.xpath("//h2[contains(text(),'Register')]"));
+        System.out.println(JS.executeScript("return (arguments[0].innerHTML).toString();", pageHeader));
+        
+        // 4.click()
+        WebElement movieChkBx = driver.findElement(By.xpath("//input[@id='checkbox2']"));
+        JS.executeScript("arguments[0].click();", movieChkBx);
+        
+        // 5.Scroll Down
+        Thread.sleep(2000);
+        JS.executeScript("window.scrollBy(0,1000)"); 
+        
+        // 6.Scroll UP
+        Thread.sleep(2000);
+        JS.executeScript("window.scrollBy(0,-1000)"); 
+        
+        // 7.Scroll to element
+        Thread.sleep(2000);
+        WebElement element1 = driver.findElement(By.xpath("//button[@id='submitbtn']"));
+        JS.executeScript("arguments[0].scrollIntoView(true);", element1);     
 	}
 
 }
