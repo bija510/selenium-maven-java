@@ -20,7 +20,9 @@ public class S07_CheckBx_RadioBtn {
 	
 	//driver.findElement(By.xpath("//input[@id='checkbox1']")).click();
 	WebElement movieChkBx = driver.findElement(By.xpath("//input[@id='checkbox1']"));
-	movieChkBx.click();
+	if(!movieChkBx.isSelected()) {
+		movieChkBx.click();
+	}
 		
 	//driver.findElement(By.xpath("//input[@value='Male']")).click();
 	WebElement maleRadBtn = driver.findElement(By.xpath("//input[@value='Male']"));

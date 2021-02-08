@@ -13,6 +13,7 @@ public class S17_AutoComplete extends Base {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		WebElement autoSuggestTextBox = driver.findElement(By.xpath("//input[@id='autocomplete']"));
 		autoSuggestTextBox.sendKeys("nep");
+		Thread.sleep(2000); //This needed otherwise this TC Fail
 		autoSuggestTextBox.sendKeys(Keys.ARROW_DOWN);
 		autoSuggestTextBox.sendKeys(Keys.ENTER);
 					
