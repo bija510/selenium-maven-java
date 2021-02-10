@@ -7,20 +7,24 @@ import org.openqa.selenium.support.PageFactory;
 
 public class register_pageFactory_page {
 	WebDriver driver;
-	
+
 	public register_pageFactory_page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//input[@placeholder='First Name']") WebElement firstNameTxBx ;
+	@FindBy(xpath = "//input[@placeholder='First Name']") 
+	private WebElement firstNameTxBx;
 	
-	@FindBy(xpath="//input[@placeholder='Last Name']")WebElement lastNameTxBx ;
+	@FindBy(xpath = "//input[@placeholder='Last Name']") 
+	private WebElement lastNameTxBx;
 	
-	@FindBy(xpath="//input[@type='email']") WebElement emailAddressTxBx ;
+	@FindBy(xpath = "//input[@type='email']") 
+	private WebElement emailAddressTxBx;
 
-
-	public WebElement setFirstName() {		
+	
+	
+	public WebElement setFirstName() {
 		return firstNameTxBx;
 	}
 
@@ -30,8 +34,7 @@ public class register_pageFactory_page {
 
 	public WebElement setEmailAddress() {
 		return emailAddressTxBx;
-		
+
 	}
 
-	
 }

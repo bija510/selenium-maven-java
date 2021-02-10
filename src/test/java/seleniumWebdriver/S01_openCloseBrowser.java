@@ -20,5 +20,9 @@ public class S01_openCloseBrowser {
 		//driver.close();	
 		driver.quit();
 	}
+	
+//	static void testing() throws InterruptedException {
+//		main(null);
+//	}
 
 }

@@ -7,21 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import seleniumWebdriver.S01_openCloseBrowser;
 import utilites_library.Base;
 
 public class Test01 extends Base {
 
 	@Test
-	public void pagetab() {
-		driver.get("https://www.facebook.com/");
-		List<WebElement> links = driver.findElements(By.tagName("a"));
-		System.out.println("==>"+links.size());
-		int a = 1;
-		for(WebElement link : links) {
-			if(link.getText().length()>0) {
-				System.out.println(a++ + " "+ link.getText()+ "==>"+link.getAttribute("href"));
-			}
-		}
-		
+	public void pagetab() throws InterruptedException {
+		S01_openCloseBrowser.main(null);
 	}
 }
