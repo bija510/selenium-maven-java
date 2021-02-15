@@ -12,6 +12,17 @@ import utilites_library.Base;
 
 public class S21_Screenshot extends Base{
 
+/*********************************************************************************************************************************************
+===================Screenshot using Chrome DevTools=======================
+Screenshot without any browser extension of full-page,any specific node or any area using Dev tools in Chrome?
+1. Open a Chrome browser.
+2. Open Dev Tools (Press F12).
+3. Press CTRL+SHIFT+P (in windows) or cmd+SHIFT+P (in mac).
+4. Type “screenshot” into the Command Menu and you will see options like “Capture area screenshot”, “Capture full-size screenshot”,..etc
+5. Select your desired option and hit enter. Done…
+If you wish to, you can also emulate a device mode first and then take the screenshot- this way it will capture as per the device dimensions.
+handy when you want to take the screenshot of the entire page on any device like iPhone X?
+*********************************************************************************************************************************************/
 	@Test
 	public void screeenShottDemo() throws IOException {
 		
