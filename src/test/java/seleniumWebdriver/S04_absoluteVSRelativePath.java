@@ -13,9 +13,12 @@ public class S04_absoluteVSRelativePath {
 	 1. Absolute path = "C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\subi\\Driver\\chromedriver.exe"
 	 2. Relative path = System.getProperty("user.dir")+"\\subi\\Driver\\chromedriver.exe" 
 	 3. Relative path [Easy way] = "../subi/Driver/chromedriver.exe"
+	 4. Don't use hard coded path is framework instead use dynamic relative path
 	 ****************************************************************************************************/
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\Maven_Seleniums\\Driver\\chromedriver.exe");
+	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\Maven_Seleniums\\Driver\\chromedriver.exe");
 	//System.setProperty("webdriver.chrome.driver", "../Maven_Seleniums/Driver/chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\Driver\\chromedriver.exe");
+	
 	WebDriver driver = new ChromeDriver();
 		
 	driver.manage().window().maximize();

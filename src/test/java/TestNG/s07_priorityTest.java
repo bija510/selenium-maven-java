@@ -2,7 +2,7 @@ package TestNG;
 
 import org.testng.annotations.Test;
 
-public class s02_priorityTest extends aBase{
+public class s07_priorityTest extends aBase{
 	
 	@Test(priority = 3 )
 	public void methodA(){

@@ -1,4 +1,4 @@
-package seleniumWebdriver;
+package TestNG;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S09_Asserts extends Base {
+public class S08_Asserts extends Base {
 
 	@Test
 	public void assertDemo() throws InterruptedException {

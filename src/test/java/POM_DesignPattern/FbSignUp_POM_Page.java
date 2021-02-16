@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 public class FbSignUp_POM_Page {
 
 	 /********************************************************************************************************************
-    1. Encapsulation Object oriented program here [private By variable] will be accessed by all this [public method]
+	  * Coding Standard to achieve encapsulation in framework
+    1. Encapsulation Object oriented program here [private By variable and make datas] will be accessed by all this [public method]
     2. Do not write assertion in page class
     3. Write All the <==[DRIVER APIs]==>.findElement.....click, getText,... only in this Page class
     ====================POM Design technique is called Lazy initialization technique====================================

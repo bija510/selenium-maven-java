@@ -3,8 +3,6 @@ package utilites_library;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -18,10 +16,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
-	public static WebDriver driver;
+	public WebDriver driver;
 	public Properties prop ;
 	
 	@BeforeMethod
@@ -50,15 +49,8 @@ public class Base {
 	
 	@AfterMethod
     public void closeLast(ITestResult result) throws IOException, InterruptedException {
-		
-		String pattern = "yyyy-MMdd";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-		String date = simpleDateFormat.format(new Date());
-		String monthAndDate = date.substring(5);
-				
-		String pattern2 = "HHmmss";	
-		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat(pattern2);	
-		String digit6TimeStamp = simpleDateFormat2.format(new Date());
+		String monthAndDate = CommonUtil.getMonthAndDate();
+		String digit6TimeStamp = CommonUtil.get6DigitTimeStamp();
 			
 		if(ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;
