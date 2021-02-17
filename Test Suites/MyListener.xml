@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bookings_Functional">
+
+<listeners>
+<listener class-name="TestNG.s09_listener"></listener>
+</listeners>
+  
+  <test name="Test">
+   
+    <classes>
+     <class name="TestNG.s08_AssertsTest"></class>
+     <class name="TestNG.s07_priorityTest"></class>
+    </classes>
+    
+  </test> <!-- Test -->
+</suite> <!-- Booking_Functional -->
+
+
+

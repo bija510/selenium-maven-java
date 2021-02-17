@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AllTypeTestNgPg">
+	<test name="Test">
+
+		<parameter name="URL" value="https://www.spicejet.com/"></parameter>
+		<parameter name="Username" value="abcd"></parameter>
+		<parameter name="Password" value="1234"></parameter>
+
+		<classes>
+			<class name="TestNG.s12_Parameterization_FromXmlFile"></class>
+		</classes>
+
+	</test> <!-- Test -->
+</suite> <!--AllTypeTestNgPg -->
+
+
+
