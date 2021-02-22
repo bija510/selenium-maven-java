@@ -6,9 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.network.Network;
-import org.openqa.selenium.devtools.network.model.ConnectionType;
-import org.openqa.selenium.devtools.network.model.LoadingFailed;
+import org.openqa.selenium.devtools.v89.network.Network;
+import org.openqa.selenium.devtools.v89.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v89.network.model.LoadingFailed;
+import org.openqa.selenium.devtools.v89.network.*;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -30,7 +31,7 @@ public class S06_ChromeDevTools {
 		//We need to send 2 different type of request [API means we can send some Request and we get some Response]
 		devTools.send(Network.enable(Optional.of(1000000), Optional.empty(), Optional.empty()));
 		
-//		devTools.send(emulateNetworkCondations(true, 100, 1000, 2000, Optional.of(ConnectionType.wifi)));
+//		devTools.send(emulateNetworkCondations(true, 100, 1000, 2000, Optional.of(ConnectionType.WIFI)));
 //		devTools.addListener(loadingFailed(),loadingFailed -> assertEquals(loadingFailed.getErrorText(), "net::ERR_INTERNET_DISCONNECTED"));
 		
 		driver.get("https://www.facebook.com");

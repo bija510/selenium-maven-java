@@ -15,6 +15,7 @@ public class S10_ImplicitWait extends Base{
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS); //used only if needed-->soft wait	
 		driver.get("http://demo.automationtesting.in/Register.html");
 		
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		Thread.sleep(2000); //always wait upto --->hard wait		
 		driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("subi");
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroupRun_Smoke" parallel="methods" thread-count="2" >
+<groups>
+<run>
+<include name="Smoke"></include>
+</run>
+</groups>
+
+  <!--============================================================
+  To Run in parallel Just Add ==>parallel="methods" thread-count="2"
+  in <suite after name That's all
+  ==============================================================-->
+	<test thread-count="5" name="Test">
+	
+	  <packages>
+	 	<package name="TestNG"></package>
+      </packages>
+     
+      <!-- 
+	  <classes>
+		<class name="TestNG.s12_GroupsTest" />
+	  </classes>
+	   -->
+   </test> <!-- Test -->
+  
+</suite> <!-- Booking_Functional -->
