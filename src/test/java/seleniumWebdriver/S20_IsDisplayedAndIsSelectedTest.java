@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S20_IsDisplayedAndIsSelected extends Base{
+public class S20_IsDisplayedAndIsSelectedTest extends Base{
 
 	public void SelAndDesMethod() {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S16_Alert extends Base{
+public class S16_AlertTest extends Base{
 	@Test
 	public void acceptAlert() throws InterruptedException {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");

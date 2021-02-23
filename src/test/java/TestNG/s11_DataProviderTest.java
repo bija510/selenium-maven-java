@@ -3,7 +3,7 @@ package TestNG;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class s11_DataProvider {
+public class s11_DataProviderTest {
 
 	/*******************************************************************************************************
 	* if we have to run 5o test in 2 or 3 different set of type of users how we do it by using @Dataprovider
