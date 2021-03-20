@@ -1,15 +1,23 @@
 package seleniumWebdriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -82,6 +90,53 @@ public class S30_DesiredCapabilites_ChromeOptions{
 		driver.findElement(By.xpath("//*[@id='createTxt']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[@id='link-to-download']")).click();
+	}
+	
+
+	@Test
+	public void downloadFileToDesiredLocation() throws AWTException {
+	/****************************************************************************
+	 * HELP:-Stackoverflow :- how to change file download location in Webdriver while using chrome driver/firefox driver
+	 * DesiredCapabilities class is ===merge into===ChromeOptions class
+	 * Before this now just replace with ChromeOptions in DesiredCapabilities
+	 ****************************************************************************/
+		WebDriverManager.chromedriver().setup();
+		String downloadFilepath = System.getProperty("user.dir")+  "\\Screenshot\\"; 
+		
+		Map<String, Object> preferences = new Hashtable<String, Object>();
+		preferences.put("profile.default_content_settings.popups", 0);
+		preferences.put("download.prompt_for_download", "false");
+		preferences.put("download.default_directory", downloadFilepath);
+		preferences.put("plugins.plugins_disabled", new String[]{"Adobe Flash Player", "Chrome PDF Viewer"});// disable flash and the PDF viewer
+        
+		// ====================Using ChromeOptions============================================
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", preferences);
+		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		options.setCapability(ChromeOptions.CAPABILITY, options);
+		
+		// ====================Injecting ChromeOptions options to WebDriver====================
+		WebDriver driver = new ChromeDriver(options);
+		
+		// ====================Open Url & click on download file ==============================
+		driver.get("http://admin:admin@the-internet.herokuapp.com//download_secure");
+		driver.manage().window().maximize();
+		WebElement massaMCNtxtFile =driver.findElement(By.xpath("//a[normalize-space()='massa MCN.txt']"));
+		massaMCNtxtFile.click();
+		
+		// ====================Handeling open window using Robot class Not required=============
+		/*******************************************************	
+		Robot rb = new Robot();
+		rb.setAutoDelay(2000); // Similar to thread.sleep
+		rb.keyPress(KeyEvent.VK_CONTROL);
+		rb.keyPress(KeyEvent.VK_V);
+		rb.keyRelease(KeyEvent.VK_CONTROL);
+		rb.keyRelease(KeyEvent.VK_V);
+		rb.setAutoDelay(2000);
+		rb.keyPress(KeyEvent.VK_ENTER);
+		rb.keyRelease(KeyEvent.VK_ENTER);
+		*******************************************************/
+		
 	}
 
 }
