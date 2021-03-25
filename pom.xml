@@ -20,6 +20,14 @@
 		    <version>4.0.0-beta-1</version>
 		</dependency>
 		 
+		 <!-- For Shadow Dom Handeling-->
+		 <!--https://github.com/sukgu/shadow-automation-selenium-->
+		<dependency>
+		  	<groupId>io.github.sukgu</groupId>
+		  	<artifactId>automation</artifactId>
+		 	<version>0.1.0</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
 			<groupId>info.cukes</groupId>
