@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
@@ -27,7 +28,7 @@ public class Base {
 	public void initialize() throws IOException {
 		//Reading data_properties file from Data Folder
 		prop =new Properties();         
-		FileInputStream fis = new FileInputStream("../Maven_Seleniums/Configurations/Config.properties");
+		FileInputStream fis = new FileInputStream("../selenium-maven-java/Configurations/Config.properties");
 		prop.load(fis);
 		String browserName = prop.getProperty("browser"); //CHROME
 
@@ -38,6 +39,10 @@ public class Base {
 		else if(browserName.equalsIgnoreCase("FIREFOX")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+		}
+		else if(browserName.equalsIgnoreCase("EDGE")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("IE")) {
 			WebDriverManager.iedriver().setup();

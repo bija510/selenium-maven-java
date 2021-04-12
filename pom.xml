@@ -81,7 +81,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>3.6.2</version>
+			<version>4.4.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/htmlunit-driver -->

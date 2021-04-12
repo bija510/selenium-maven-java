@@ -11,7 +11,7 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 
 public class S07_RelativeLocator {

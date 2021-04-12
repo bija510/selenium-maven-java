@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.utils.FileUtil;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class S01_TakeWebElementSshot {
 
@@ -22,7 +23,7 @@ public class S01_TakeWebElementSshot {
 
 	@Test
 	public void ScreenShotDemo() {
-		ChromeDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://demo.automationtesting.in/Register.html");
 		WebElement skillsDDL = driver.findElement(By.xpath("//select[@id='Skills']"));

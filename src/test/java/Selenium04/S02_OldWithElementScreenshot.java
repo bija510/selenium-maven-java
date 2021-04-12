@@ -12,7 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 public class S02_OldWithElementScreenshot {
 	
@@ -20,6 +21,7 @@ public class S02_OldWithElementScreenshot {
 	
 	@Test
 	public void testOnly() throws IOException {
+		//WebDriverManager.chromedriver().setup();
 		ChromeDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://demo.automationtesting.in/Register.html");

@@ -12,7 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+
 
 public class S03_ScreenShotGroupOfElements {
 private static WebDriver driver;
