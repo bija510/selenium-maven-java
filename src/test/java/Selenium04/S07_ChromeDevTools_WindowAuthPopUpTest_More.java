@@ -12,7 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 import utilites_library.Base;
 
-public class S10_Chrome_DevTools_WindowAuthPopUpTest extends Base {
+public class S07_ChromeDevTools_WindowAuthPopUpTest_More extends Base {
 
 	private static final String username = "admin";
 	private static final String password = "admin";

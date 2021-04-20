@@ -6,41 +6,42 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v89.network.Network;
-import org.openqa.selenium.devtools.v89.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v89.network.model.LoadingFailed;
-import org.openqa.selenium.devtools.v89.performance.Performance;
-import org.openqa.selenium.devtools.v89.performance.model.Metric;
 import org.openqa.selenium.devtools.v89.emulation.Emulation;
 import org.openqa.selenium.devtools.v89.log.Log;
-import org.openqa.selenium.devtools.v89.network.*;
+import org.openqa.selenium.devtools.v89.network.Network;
+import org.openqa.selenium.devtools.v89.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v89.performance.Performance;
+import org.openqa.selenium.devtools.v89.performance.model.Metric;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class S06_ChromeDevTools {
 
-	private static WebDriver driver;
+/*****************************************************************************************
+Selenium 3:- ChromeDriver<===extends==RemoteWebDriver 
+Seleinum 4:- ChromeDriver<===ChromiumDriver<===extends==RemoteWebDriver
+******************************************************************************************
+Summary
+As you can see, Selenium has become a lot more powerful with the addition of the CDP APIs.
+We can now enhance our tests to [capture HTTP network traffic], [collect performance metrics],
+[handle authentication], and [emulate geolocations, time zones and device modes]. 
+As well as [anything else that is possible within Chrome DevTools!]
+******************************************************************************************/
+	ChromeDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
 
-	/**************************************************************************************************************************
-	 * Some applications have different features and functionalities across
-	 * different locations. Automating such applications is difficult because it is
-	 * hard to emulate the geo locations in the browser using Selenium. But with the
-	 * help of Devtools, we can easily emulate them. Below code snippet demonstrates
-	 * that.
-	 ***************************************************************************************************************************/
-
+	
 	@Test
 	public void test_set_device_mode() {
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver;
-		driver = new ChromeDriver();
-
 		DevTools devTools = driver.getDevTools();
 		devTools.createSession();
 		Map deviceMetrics = new HashMap() {
@@ -52,7 +53,7 @@ public class S06_ChromeDevTools {
 			}
 		};
 		driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
-		driver.get("https://www.google.com");
+		driver.get("http://demo.automationtesting.in/Register.html");
 	}
 
 	/*******************************************************************************
@@ -66,24 +67,22 @@ public class S06_ChromeDevTools {
 	 ********************************************************************************/
 	@Test
 	public void test_set_network_or_stimulate_network_speed() {
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver;
-		driver = new ChromeDriver();
-
 		DevTools devTools = driver.getDevTools();
 		devTools.createSession();
 		devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 		devTools.send(Network.emulateNetworkConditions(false, 20, 20, 50, Optional.of(ConnectionType.CELLULAR2G)));
 		driver.get("https://www.google.com");
-
 	}
 
+	/**********************************************************************************
+	 * Some applications have different features and functionalities across
+	 * different locations. Automating such applications is difficult because it is
+	 * hard to emulate the geo locations in the browser using Selenium. But with the
+	 * help of Devtools, we can easily emulate them. Below code snippet demonstrates
+	 * that.
+	 **********************************************************************************/
 	@Test
 	public void test_mocking_geolocation() {
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver;
-		driver = new ChromeDriver();
-
 		 DevTools devTools = driver.getDevTools();
 	        devTools.createSession();
 	        devTools.send(Emulation.setGeolocationOverride(
@@ -91,22 +90,11 @@ public class S06_ChromeDevTools {
 	                Optional.of(-78.8256),
 	                Optional.of(100)));
 	        driver.get("https://mycurrentlocation.net/");
-
 	}
 
-	
-    private static DevTools chromeDevTools;
-	
+		
 	@Test
-	public void testCaptureNetworkTraffic() {
-		/*
-		 * Selenium 3:- ChromeDriver<===extends==RemoteWebDriver Seleinum 4:-
-		 * ChromeDriver<===ChromiumDriver<===extends==RemoteWebDriver
-		 */
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver();
-
-
+	public void testCaptureNetworkTraffic_or_Capture_HTTP_Requests() {	
 		DevTools chromeDevTools = driver.getDevTools();
 		chromeDevTools.createSession();
 
@@ -118,14 +106,11 @@ public class S06_ChromeDevTools {
 					entry.getRequest().getMethod();
 				});
 		driver.get("https://www.google.com");
-		chromeDevTools.send(Network.disable());
-			
+		chromeDevTools.send(Network.disable());		
 	}
 
 	@Test
-	public void CaptureConsoleLogs() {
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver();
+	public void capture_chrome_console_logs() {
 		DevTools chromeDevTools = driver.getDevTools();
 		chromeDevTools.createSession();
 
@@ -138,13 +123,16 @@ public class S06_ChromeDevTools {
 		driver.get("https://testersplayground.herokuapp.com/console-5d63b2b2-3822-4a01-8197-acd8aa7e1343.php");
 	}
 	
+	/************************************************************************************************
+	  Poor performing websites and slower loading pages make unhappy customers.
+	  Can we validate these metrics along with our functional regression on every build? Yes, we can!
+	  The CDP command to capture performance metrics
+	 ************************************************************************************************/
 	@Test
 	public void capturing_performance_metrics() {
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver();
 		DevTools devTools = driver.getDevTools();
 		devTools.createSession();
-//		devTools.send(Performance.enable());
+		devTools.send(Performance.enable(Optional.empty()));
 
 		driver.get("https://www.google.org");
 

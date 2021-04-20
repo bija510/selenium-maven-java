@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 
-public class S07_RelativeLocator {
+public class S10_RelativeLocator {
 
 	/*
 	 * This are the 5 different locator supported in Selenium 4 this are called
