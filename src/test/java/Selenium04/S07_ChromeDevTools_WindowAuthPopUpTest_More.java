@@ -17,10 +17,15 @@ public class S07_ChromeDevTools_WindowAuthPopUpTest_More extends Base {
 	private static final String username = "admin";
 	private static final String password = "admin";
 
-	/********************************************************************************
-	 * This way doesn't work for Edge browser. If there is username with @ then this
-	 * will not work.
-	 *******************************************************************************/
+/********************************************************************************
+1. Selenium 4 much awaited native support for Chrome DevTools Protocol through “DevTools” interface.
+2. This helps us getting Chrome Development properties such as Application Cache, Fetch, Network,
+Performance, Profiler, Resource Timing, Security and Target CDP domains etc.
+3. Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. 
+4. It help to edit pages on-the-fly and diagnose problems quickly, 
+which ultimately helps you build better websites, faster.doesn't work for Edge browser.
+If there is username with @ then this will not work.
+*******************************************************************************/
 	@Test
 	public void wind_auth_popup() {
 		// driver.get("http://the-internet.herokuapp.com/basic_auth");
