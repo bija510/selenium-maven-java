@@ -9,16 +9,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class mySQLDatabaseTestingTest {
-
+	
+		private static String hostName = "localhost";
+		private static String portNum = "3306";
+		private static String dataBaseName = "/Qadbt";
+		private static String userName = "root";
+		private static String password = "admin123";
+		
+		
 	@Test
 	public void databaseTesting() throws SQLException {
-		String hostName, portNum, dataBaseName, userName, password;
-		hostName = "localhost";
-		portNum = "3306";
-		dataBaseName = "/Qadbt";
-		userName = "root";
-		password = "admin123";
-
 		Connection con = DriverManager.getConnection("jdbc:mysql://" + hostName + ":" + portNum + dataBaseName,userName, password);
 		Statement s = con.createStatement();
 		ResultSet rs = s.executeQuery("select * from Employeeinfo where name='david'"); // adam, bin, cavin, david
@@ -36,7 +36,7 @@ public class mySQLDatabaseTestingTest {
 			Assert.assertEquals(rs.getString("age"), "24");
 			Assert.assertEquals(rs.getString("id"), "4");
 
-			System.out.println("Everything Match OK.............");
+			System.out.println(">>>>>>>--- > Record found in the SQL DataBase table || Test case passed");
 		}
 	}
 

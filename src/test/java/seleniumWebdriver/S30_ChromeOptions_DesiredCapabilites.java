@@ -11,10 +11,13 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -93,7 +96,7 @@ public class S30_ChromeOptions_DesiredCapabilites {
 	}
 
 	@Test
-	public void browser_mobile_emulation_mode() {
+	public void chrome_browser_mobile_emulation_mode() {
 		Map<String, String> mobileEmulation = new HashMap<>();
 		mobileEmulation.put("deviceName", "iPhone X");// Nexus 5
 		ChromeOptions chromeOptions = new ChromeOptions();
@@ -106,6 +109,46 @@ public class S30_ChromeOptions_DesiredCapabilites {
 		driver.get("https://www.facebook.com");
 	}
 
+	@Test
+	public void microsoft_edge_browser_mobile_emulation_mode() {
+		Map<String, String> mobileEmulation = new HashMap<>();
+		mobileEmulation.put("deviceName", "iPhone X");// Nexus 5
+		EdgeOptions options = new EdgeOptions();
+		options.setExperimentalOption("mobileEmulation", mobileEmulation);
+
+		// Injecting the Capabilities in the EdgeDriver
+		WebDriverManager.edgedriver().setup();
+		WebDriver driver = new EdgeDriver(options);
+		driver.manage().window().maximize();
+		driver.get("https://www.facebook.com");
+	}
+	
+
+	/***********************************************************
+	 * Doc:- https://chromedriver.chromium.org/mobile-emulation
+	 ***********************************************************/
+	    @Test
+		public void ChromeMobileEmulator_withSize() {
+	    	Map<String, Object> deviceMetrics = new HashMap<>();
+	    	deviceMetrics.put("width", 360);
+	    	deviceMetrics.put("height", 640);
+	    	deviceMetrics.put("pixelRatio", 3.0);
+	    	Map<String, Object> mobileEmulation = new HashMap<>();
+	    	mobileEmulation.put("deviceMetrics", deviceMetrics);
+	    	mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
+	    	ChromeOptions chromeOptions = new ChromeOptions(); 
+	    	chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+	    	
+	    	WebDriverManager.chromedriver().setup();
+	    	WebDriver driver = new ChromeDriver(chromeOptions);
+	    	
+	    	//Verify desired device open in Browser
+			String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); //navigator.appVersion
+			System.out.println("Executed Device Name:- "+uAgent.substring(13, 37));
+			
+	    	driver.get("https://www.facebook.com/");
+	    }
+	    
 	@Test
 	public void downloadFile_withoutPopUp() throws InterruptedException {
 
@@ -142,33 +185,24 @@ public class S30_ChromeOptions_DesiredCapabilites {
 		preferences.put("profile.default_content_settings.popups", 0);
 		preferences.put("download.prompt_for_download", "false");
 		preferences.put("download.default_directory", downloadFilepath);
-		preferences.put("plugins.plugins_disabled", new String[] { "Adobe Flash Player", "Chrome PDF Viewer" });// disable
-																												// flash
-																												// and
-																												// the
-																												// PDF
-																												// viewer
-
-		// ====================Using
-		// ChromeOptions============================================
+		preferences.put("plugins.plugins_disabled", new String[] { "Adobe Flash Player", "Chrome PDF Viewer" });
+		
+		// disable flash and the PDF viewer Using ChromeOptions
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", preferences);
 		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		options.setCapability(ChromeOptions.CAPABILITY, options);
 
-		// ====================Injecting ChromeOptions options to
-		// WebDriver====================
+		//Injecting ChromeOptions options to WebDriver
 		WebDriver driver = new ChromeDriver(options);
 
-		// ====================Open Url & click on download file
-		// ==============================
+		// Open Url & click on download file
 		driver.get("http://admin:admin@the-internet.herokuapp.com//download_secure");
 		driver.manage().window().maximize();
 		WebElement massaMCNtxtFile = driver.findElement(By.xpath("//a[normalize-space()='massa MCN.txt']"));
 		massaMCNtxtFile.click();
 
-		// ====================Handeling open window using Robot class Not
-		// required=============
+		//Handeling open window using Robot class Not required
 		/*******************************************************
 		 * Robot rb = new Robot(); rb.setAutoDelay(2000); // Similar to thread.sleep
 		 * rb.keyPress(KeyEvent.VK_CONTROL); rb.keyPress(KeyEvent.VK_V);
