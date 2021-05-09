@@ -43,7 +43,7 @@ public class chromeAndFirefoxTest {
 	System.out.println(googlePageLebel.getText());
 	
 	File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ "googlescr.png"));//result+result.getName()
+	FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/"+ "googlescr.png"));//result+result.getName()
 	
 	driver.quit();			
 	}

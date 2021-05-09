@@ -14,7 +14,7 @@ public class autoit_FileUploadTest extends Base{
 		
 		WebElement fileUpload = driver.findElement(By.xpath("//div[@class='btn btn-primary btn-file']"));
 		fileUpload.click();
-		Runtime.getRuntime().exec("../Maven_Seleniums/Autoit/autoit.exe");
+		Runtime.getRuntime().exec("../selenium-maven-java/Autoit/autoit.exe");
 	
 		
 	}

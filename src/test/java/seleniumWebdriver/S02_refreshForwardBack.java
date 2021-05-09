@@ -9,7 +9,7 @@ public class S02_refreshForwardBack {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bijaya Chhetri\\eclipse-workspace\\Maven_Seleniums\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("https://www.facebook.com/");

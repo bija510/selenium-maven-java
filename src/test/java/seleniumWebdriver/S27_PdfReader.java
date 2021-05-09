@@ -16,7 +16,7 @@ public class S27_PdfReader {
 
 	@Test
 	public void readPDFFile() throws IOException {
-		URL url = new URL("file:///C:/Users/Bijaya%20Chhetri/eclipse-workspace/Maven_Seleniums/Include/test_text1.pdf");
+		URL url = new URL("file:///C:/Users/Bijaya%20Chhetri/eclipse-workspace/selenium-maven-java/Include/test_text1.pdf");
 		InputStream is = url.openStream();
 		BufferedInputStream fileParser = new BufferedInputStream(is);
 		PDDocument document = null;

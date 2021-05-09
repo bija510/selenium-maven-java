@@ -35,12 +35,12 @@ public class S02_OldWithElementScreenshot {
 	/*===============This take screenshot of Specific Element====================*/
 	public static void takeElementScreenShot(WebElement element ,String fileName) throws IOException { //Type Casting [WebElement] instead of [driver]
 		File src = ((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ fileName +".png"));
+		FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/"+ fileName +".png"));
 	}
 	
 	/*===============This take screenshot of Full Page old library====================*/
 	public static void takeFullPagescreenShot(String fileName) throws IOException {
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ fileName +".png"));
+		FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/"+ fileName +".png"));
 	}
 }

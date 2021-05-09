@@ -37,7 +37,7 @@ public class S01_TakeWebElementSshot {
 	public static void takeWebElementScreenshot(WebElement element, String fileName) {
 		File scrfile = element.getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(scrfile, new File("../Maven_Seleniums/Screenshot/" + fileName + ".png"));
+			FileUtils.copyFile(scrfile, new File("../selenium-maven-java/Screenshot/" + fileName + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

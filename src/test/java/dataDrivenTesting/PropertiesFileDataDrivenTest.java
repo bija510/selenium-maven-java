@@ -21,7 +21,7 @@ public class PropertiesFileDataDrivenTest extends Base{
 		Ans. While data change we don't want to change in over 20 test case rather we do in One place properties file
 		**********************************************************************************************************/
 		Properties prop = new Properties();
-	    FileInputStream fis = new FileInputStream("../Maven_Seleniums/Configurations/Config.properties");
+	    FileInputStream fis = new FileInputStream("../selenium-maven-java/Configurations/Config.properties");
 	    prop.load(fis);
 	    String URL = prop.getProperty("url");
 	    String firstName =prop.getProperty("FirstName");

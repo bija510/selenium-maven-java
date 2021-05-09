@@ -11,7 +11,7 @@ public class ExcelDataDrivenTest extends Base {
 
 	@Test
 	public void readingDataFromExcel() {
-	Xls_Reader reader = new Xls_Reader("../Maven_Seleniums/Data/InputTestData.xlsx"); // objectName  || xPath
+	Xls_Reader reader = new Xls_Reader("../selenium-maven-java/Data/InputTestData.xlsx"); // objectName  || xPath
 	String sheetName = "Sheet1";
 
 	/**************************************************************************
