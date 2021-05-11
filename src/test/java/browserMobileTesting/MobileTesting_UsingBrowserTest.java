@@ -61,22 +61,30 @@ public class MobileTesting_UsingBrowserTest {
 
 	@Test
 	public void microsoft_edge_browser_mobile_emulation_mode() {
-		Map<String, String> mobileEmulation = new HashMap<>();
-		mobileEmulation.put("deviceName", "Pixel 2");// Nexus 5 , Pixel 2, iPhone X
-		EdgeOptions options = new EdgeOptions();
-		options.setExperimentalOption("mobileEmulation", mobileEmulation);
-
-		// Injecting the Capabilities in the EdgeDriver
-		WebDriverManager.edgedriver().setup();
-		WebDriver driver = new EdgeDriver(options);
-		
-		//Verify desired device open in Browser
-		String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); //navigator.appVersion
-		System.out.println("==>" + uAgent);
-		System.out.println("Executed Device Name:- "+uAgent.substring(13, 37));
-		
-		driver.manage().window().maximize();
-		driver.get("https://www.facebook.com");
+		WebDriver driver = null;
+		try {
+			Map<String, String> mobileEmulation = new HashMap<>();
+			mobileEmulation.put("deviceName", "Pixel 2");// Nexus 5 , Pixel 2, iPhone X
+			EdgeOptions options = new EdgeOptions();
+			options.setExperimentalOption("mobileEmulation", mobileEmulation);
+	
+			// Injecting the Capabilities in the EdgeDriver
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver(options);
+			
+			//Verify desired device open in Browser
+			String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); //navigator.appVersion
+			System.out.println("==>" + uAgent);
+			System.out.println("Executed Device Name:- "+uAgent.substring(13, 37));
+			
+			driver.manage().window().maximize();
+			driver.get("https://www.facebook.com");
+			
+		}catch(Exception e) {
+			System.out.println(e.getStackTrace());
+		}finally {
+			driver.quit();
+		}
 	}
 	
 

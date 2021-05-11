@@ -72,6 +72,7 @@ Other demo test case are:-
     * page object model
 13. Singleton Test case Design Pattern demo.
 14. Demo test case to Handle **Shadow Dom**.
+
 ```
     <dependency>
 		<groupId>io.github.sukgu</groupId>
@@ -80,6 +81,42 @@ Other demo test case are:-
     </dependency>
 ```
 
+## How to run test suite
+
+```
+1. Open terminal go to project path & run this command:
+	A. command is = mvn clean test -DtestngFile=RunPackages.xml
+	B. Make sure you have this inside the pom.xml file
+	C. If the testsuite.xml file are in root directory the Just this is fine = ${testngFile}
+	D. And in the pom.xml for test change 
+	<scope>test</scope> to <scope>compile</scope> so that it will run from CMD.
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+            <configuration>
+               <suiteXmlFiles>
+               <suiteXmlFile>./Test Suites/${testngFile}</suiteXmlFile>
+               </suiteXmlFiles>
+            </configuration>
+        </plugin>
+		</plugins>
+	</build>
+
+```
 15. Parallel execution demo test case in two different flavor.
 
 # **Selenium-WebDriver-4**
