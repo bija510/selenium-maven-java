@@ -24,6 +24,16 @@
 >Last but no least it support So many Plugins. any body will be amazed with the variety of flavor of plugins which are also free.
 ***
 
+## Maven LIfecycle
+1. validate
+2. compile
+3. test
+4. package
+5. integration test
+6. verify
+7. install - install in local rep
+8. deploy - install in remote rep to use by other project
+
 This source code will provide all the demo test case using maven project for selenium webdriver 3 and 4.
 Other demo test case are:-
 
@@ -127,3 +137,16 @@ Other demo test case are:-
 4. Open new blank Tab.
 5. ChromeDevtools demo.
 6. Relative or friendly locator.
+
+## Why should you check Broken Links?
+1. Broken links are a big turn-off for the visitors who land on your website. 
+2. Broken Links can hurt the user experience.
+3. Removal of broken (or dead) links is essential for SEO (Search Engine Optimization), as it can affect the site’s rankings on search engines (e.g., Google).
+4. Broken links testing can be done using Selenium WebDriver on a web page, which in turn can be used to remove the site’s dead links.
+
+### How to Find Broken Links Using Selenium WebDriver?
+1. Use the < a > tag to collect details of all the links present on the webpage.
+2. Send an HTTP request for every link.
+3. Verify the corresponding response code received in response to the request sent in the previous step.
+4. Validate whether the link is broken or not based on the response code sent by the server.
+5. Repeat steps (2-4) for every link present on the page.

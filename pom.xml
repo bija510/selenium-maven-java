@@ -35,6 +35,7 @@
 		</dependency>
 
      <!-- com.relevantcodes is for the extent report by running testng.xml file-->
+     <!-- This This artifact was moved to: com.aventstack » extentreports -->
 		<dependency>
 			<groupId>com.relevantcodes</groupId>
 			<artifactId>extentreports</artifactId>
