@@ -24,7 +24,14 @@
 >Last but no least it support So many Plugins. any body will be amazed with the variety of flavor of plugins which are also free.
 ***
 
-## Maven LIfecycle
+## How to download Eclipse and Install TestNG plugin
+1. Install eclipse version 2020-03 & eclipse version after that don't support Java 1.8 it only support java 11 <
+2. Go to this site https://github.com/cbeust/testng-eclipse#install-snapshot
+3. Copy this LATEST RELEASE	= https://testng.org/testng-eclipse-update-site
+4. In Eclipse ==> Help==> Install new software==> work with = https://testng.org/testng-eclipse-update-site
+5. And give name TestNG and it will found check & install
+
+## Maven Lifecycle
 1. validate
 2. compile
 3. test

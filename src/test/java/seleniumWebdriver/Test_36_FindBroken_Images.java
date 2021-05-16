@@ -17,7 +17,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Test_36_FIndBroken_Images {
+/* for Docs
+ * https://github.com/YadaGiriReddy/HYR-Tutorials
+ */
+public class Test_36_FindBroken_Images {
 
 	public static void main(String[] args) throws Exception {
 		 //VerifyBrokenImagesUsingSelenium();
