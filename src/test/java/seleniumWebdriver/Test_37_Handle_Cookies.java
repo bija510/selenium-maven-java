@@ -6,17 +6,65 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Test_37_Handle_Cookies {
+	int a = 0;
+	int b = 0;
+	Set<Cookie> cookies;
+	Iterator<Cookie> cookie;
+	
+	@Test
+	public void cookieMethods() {
+
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+
+		driver.navigate().to("https://www.amazon.com");
+		driver.manage().window().maximize();
+		
+		//1.addCookie()
+		driver.manage().addCookie(new Cookie("userName", "David"));
+		driver.findElement(By.xpath("//*[@id='nav-signin-tooltip']/a")).click();
+		
+		//2.getCookieNamed()
+		System.out.println(driver.manage().getCookieNamed("userName"));
+		
+		//3.getCookies()
+		cookies = driver.manage().getCookies();
+		cookie = cookies.iterator();
+		while(cookie.hasNext()){
+			System.out.println(++a + " "+cookie.next());
+		}
+		System.out.println("\nCookies Size = "+cookies.size()+"\n");
+		
+		//4. deleteCookieNamed()
+		driver.manage().deleteCookieNamed("userName");
+		
+		//5. deleteAllCookies()
+		driver.manage().deleteAllCookies();
+		
+		// Verifying after deleting the cookie
+		cookies = driver.manage().getCookies();
+		cookie = cookies.iterator();
+		while(cookie.hasNext()){
+			System.out.println(++b + " "+cookie.next());
+		}
+		System.out.println("\nCookies Size = "+cookies.size()+"\n");
+	}
+
+
 
 	@Test
 	public void storingCookie() {
