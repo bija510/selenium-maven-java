@@ -12,6 +12,7 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -246,4 +247,39 @@ public class S30_ChromeOptions_DesiredCapabilites {
 		driver.get("https://www.w3schools.com/html/html_tables.asp");
 	}
 
+	@Test(description = "Default is NORMAL. Wait for the entire page is loaded or waits until the load event fire is returned.")
+	public void pageLoadStrategy_normal() {
+		ChromeOptions options = new ChromeOptions();
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(options);
+		
+		driver.get("https://google.com");
+
+	}
+	
+	@Test(description = "wait until the initial HTML document has been completely loaded and parsed, & discards loading of stylesheets, images and subframes.")
+	public void pageLoadStrategy_eager() {
+		ChromeOptions options = new ChromeOptions();
+		options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(options);
+		
+		driver.get("https://google.com");
+
+	}
+	
+	@Test(description = "When set to none Selenium WebDriver only waits until the initial page is downloaded.")
+	public void pageLoadStrategy_none() {
+		ChromeOptions options = new ChromeOptions();
+		options.setPageLoadStrategy(PageLoadStrategy.NONE);
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(options);
+		
+		driver.get("https://google.com");
+
+	}
 }

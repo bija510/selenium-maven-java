@@ -15,7 +15,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -24,7 +26,7 @@ public class Base {
 	public WebDriver driver;
 	public Properties prop ;
 	
-	@BeforeMethod
+	@BeforeClass(alwaysRun = true)
 	public void initialize() throws IOException {
 		//Reading data_properties file from Data Folder
 		prop =new Properties();         
@@ -53,7 +55,7 @@ public class Base {
 	}
 	
 	@AfterMethod
-    public void closeLast(ITestResult result) throws IOException, InterruptedException {
+    public void closeLast(ITestResult result) throws IOException{
 		String monthAndDate = CommonUtil.getMonthAndDate();
 		String digit6TimeStamp = CommonUtil.get6DigitTimeStamp();
 			
@@ -61,10 +63,13 @@ public class Base {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ failScreenShotName +".png"));//result+result.getName()		
-		}
-		
+		}			
+	}
+	
+	@AfterClass(alwaysRun = true)
+	public void tearDown() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.quit();
-		driver = null;		
-	}	
+		driver = null;	
+	}
 }

@@ -3,8 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="POM_DesignPattern.FbSignUp_POM_Test"/>
-      <class name="POM_DesignPattern.register__pageFactory_Test"/>
+      <class name="pom_traditional_design_pattern.FbSignUp_POM_Test"/>
+      <class name="pom_traditional_design_pattern.register__pageFactory_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,4 +1,4 @@
-package POM_DesignPattern;
+package pom_traditional_design_pattern;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

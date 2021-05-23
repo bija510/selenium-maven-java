@@ -1,4 +1,4 @@
-package POM_DesignPattern;
+package pom_traditional_design_pattern;
 
 import org.testng.annotations.Test;
 
