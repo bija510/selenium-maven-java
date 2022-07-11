@@ -37,8 +37,21 @@ public class S33_ShadowDomOrRoot {
 		
 	
 		Shadow shadow = new Shadow(driver);
-		shadow.findElement("#input").sendKeys("apple");
+		shadow.findElement("#input").sendKeys("apple");	
+	}
+	
+	@Test
+	public void test_insideShodowDom_() {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://books-pwakit.appspot.com/");
 		
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement input = (WebElement) (js.executeScript(
+				"return document.querySelector(\"body > book-app\")"
+				+ ".shadowRoot"
+				+ ".querySelector(\"#input\")"));
+		input.sendKeys("Victor automation");;
+			
 	}
 }
