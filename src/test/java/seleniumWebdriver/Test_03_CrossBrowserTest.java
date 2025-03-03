@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S03_CrossBrowserTest {
+public class Test_03_CrossBrowserTest {
 	/***************************************************************
 	 * Cross or multi Browser Testing ie:-Firefox, Chrome, IE & Edge
 	 ***************************************************************/

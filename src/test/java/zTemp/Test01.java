@@ -1,46 +1,67 @@
 package zTemp;
 
 
-import java.util.*;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.locators.RelativeLocator;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 public class Test01 {
 
-	/*****************************************************
-	 * Docs:- https://chromedriver.chromium.org/mobile-emulation
-	 ******************************************************/
-	    @Test
-		public void ChromeMobileEmulator_withSize() {
-	    	Map<String, Object> deviceMetrics = new HashMap<>();
-	    	deviceMetrics.put("width", 360);
-	    	deviceMetrics.put("height", 640);
-	    	deviceMetrics.put("pixelRatio", 3.0);
-	    	Map<String, Object> mobileEmulation = new HashMap<>();
-	    	mobileEmulation.put("deviceMetrics", deviceMetrics);
-	    	//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-	    	
-	    	mobileEmulation.put("userAgent", "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Mobile/15E148 Safari/604.1");
-		    
-	    	ChromeOptions chromeOptions = new ChromeOptions(); 
-	    	chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-	    	
-	    	WebDriverManager.chromedriver().setup();
-	    	WebDriver driver = new ChromeDriver(chromeOptions);
-	    	
-	    	//Verify desired device open in Browser
-			String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); //navigator.appVersion
-			System.out.println("==>" + uAgent);
-			System.out.println("Executed Device Name:- "+uAgent.substring(13, 37));
-			
-	    	driver.get("https://www.facebook.com/");
-	    }
+	/*
+	 * This are the 5 different locator supported in Selenium 4 this are called
+	 * friendly locator below(), toLeftOf(), toRightOf(), above(), near()
+	 */
+	private static WebDriver driver;
+
+	@BeforeClass
+	public void setUp() {
+		ChromeDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+
+	}
+
+	@AfterClass
+	public void tearDown() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.close();
+	}
+
+	@Test(description = "Test books is left of book6 & below Book1")
+	public void frendlyOrRelativeLocator() {
+		driver.get("https://automationbookstore.dev/");
+		WebElement book5 = driver.findElement(RelativeLocator.withTagName("li").toLeftOf(By.id("pid6")).below(By.id("pid1")));
+		System.out.println(book5.getAttribute("id"));
+		Assert.assertEquals("pid5", book5.getAttribute("id"));
+	}
+	
+	@Test
+	public void frendlyOrRelativeLocator2() throws InterruptedException {
+		driver.get("https://qaclickacademy.github.io/protocommerce/"); // 
+		JavascriptExecutor JS = (JavascriptExecutor)driver;
+		JS.executeScript("window.scrollBy(0,1000)"); 
+		Thread.sleep(1000);
+		
+		driver.findElement(RelativeLocator.withTagName("input").toLeftOf(By.xpath("//label[normalize-space()='Check me out if you Love IceCreams!']"))).click();
+		Thread.sleep(1000);
+		
+		System.out.println(driver.findElement(RelativeLocator.withTagName("label").toRightOf(By.cssSelector("#exampleCheck1"))).getText());
+		Thread.sleep(1000);
+		
+		driver.findElement(RelativeLocator.withTagName("input").below(By.cssSelector("label[for='dateofBirth']"))).sendKeys("01/01/2021");
+		
+	}
 
 }

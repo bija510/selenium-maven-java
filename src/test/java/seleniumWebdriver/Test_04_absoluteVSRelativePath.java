@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class S04_absoluteVSRelativePath {
+public class Test_04_absoluteVSRelativePath {
 	
 	public static void main(String[] args) throws InterruptedException {
 	/***************************************************************************************************

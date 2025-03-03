@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S09_Asserts extends Base {
+public class Test_09_Asserts extends Base {
 
 	@Test
 	public void assertDemo() throws InterruptedException {

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utilites_library.Base;
 
-public class S08_Misc_function extends Base{
+public class Test_08_Misc_function extends Base{
 
 	@Test
 	public void miscFunct() throws InterruptedException {

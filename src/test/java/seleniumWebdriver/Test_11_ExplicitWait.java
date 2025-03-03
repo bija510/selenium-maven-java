@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S11_ExplicitWait extends Base{
+public class Test_11_ExplicitWait extends Base{
 	
 	/*******************************************************************
 	 *SELENIUM:-3 WebDriverWait​(WebDriver driver, long timeoutInSeconds) Deprecated.

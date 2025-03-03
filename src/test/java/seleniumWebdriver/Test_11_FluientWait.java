@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S11_FluientWait {
+public class Test_11_FluientWait {
 
 	@Test
 	public void fleuintWait() {

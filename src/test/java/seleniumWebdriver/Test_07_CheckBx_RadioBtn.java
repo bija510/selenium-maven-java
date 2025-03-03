@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S07_CheckBx_RadioBtn {
+public class Test_07_CheckBx_RadioBtn {
 
 	@Test
 	public void CheckBxAndRadioBtn() throws InterruptedException {

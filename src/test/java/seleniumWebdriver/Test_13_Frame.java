@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S13_Frame extends Base {
+public class Test_13_Frame extends Base {
 
 	@Test
 	public void switchToFrame() throws InterruptedException {

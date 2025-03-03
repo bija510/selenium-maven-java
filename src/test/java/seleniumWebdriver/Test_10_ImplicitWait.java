@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S10_ImplicitWait extends Base{
+public class Test_10_ImplicitWait extends Base{
 
 	@Test
 	public void ImpliWait() throws InterruptedException {

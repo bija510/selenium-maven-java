@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S06_DropdownList_DDL extends Base {
+public class Test_06_DropdownList_DDL extends Base {
 	/**********************************************************************************
 	 * We have 2 types of dropDown 1. static dropDown :- Regular Html dropDown with
 	 * fixed value 2. dynamic dropDown or paper-dropdown-input:- not fixed DDL order
@@ -18,7 +18,7 @@ public class S06_DropdownList_DDL extends Base {
 	 **********************************************************************************/
 
 	@Test
-	public void staticDDLTest() throws InterruptedException {
+	public void test_staticDDL() throws InterruptedException {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		WebElement DDL = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
 		Select selectDDL = new Select(DDL);
@@ -37,7 +37,7 @@ public class S06_DropdownList_DDL extends Base {
 	}
 
 	@Test
-	public void dynamicDDLTest() throws InterruptedException {
+	public void test_dynamicDDL() throws InterruptedException {
 		
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		driver.findElement(By.xpath("//input[@id='autocomplete']")).sendKeys("ind");

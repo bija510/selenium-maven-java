@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S05_Click_Sendkeys_GetText {
+public class Test_05_Click_Sendkeys_GetText {
 
 	@Test
 	public void methodDemo() throws InterruptedException {

@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utilites_library.Base;
 
-public class S12_Calendar_Datepicker extends Base {
+public class Test_12_Calendar_Datepicker extends Base {
 
 	// Current Date
 	Format f = new SimpleDateFormat("MM/dd/yyyy");
