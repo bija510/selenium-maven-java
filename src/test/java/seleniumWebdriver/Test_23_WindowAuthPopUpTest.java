@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S23_WindowAuthPopUpTest  extends Base {
+public class Test_23_WindowAuthPopUpTest  extends Base {
 
 	@Test
 	public void setPopUpUserNamePwd() {

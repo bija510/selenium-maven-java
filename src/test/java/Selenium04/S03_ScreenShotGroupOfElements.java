@@ -12,15 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-
 
 public class S03_ScreenShotGroupOfElements {
 private static WebDriver driver;
 	
 	@Test
 	public void testOnly() throws IOException {
-		ChromeDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://learn.letskodeit.com/p/practice");
 		WebElement allRadioBtnGroup = driver.findElement(By.xpath("//div[@id='radio-btn-example']"));

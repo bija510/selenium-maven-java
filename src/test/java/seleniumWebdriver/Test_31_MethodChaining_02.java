@@ -2,7 +2,7 @@ package seleniumWebdriver;
 
 import org.testng.annotations.Test;
 
-public class S31_MethodChaining_02 {
+public class Test_31_MethodChaining_02 {
 /*************************************************************
  * ==================Fluent design pattern===================
  * disadvantage:- Hard for Debugging
@@ -10,7 +10,7 @@ public class S31_MethodChaining_02 {
  **************************************************************/
 	@Test
 	public void testMethod() {
-		new S31_MethodChaining_01()
+		new Test_31_MethodChaining_01()
 		.openUrl()
 		.enterUserName()
 		.enterPassword()

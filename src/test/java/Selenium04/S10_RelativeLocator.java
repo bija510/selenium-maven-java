@@ -1,6 +1,6 @@
 package Selenium04;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,7 +11,6 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 
 public class S10_RelativeLocator {
@@ -24,9 +23,8 @@ public class S10_RelativeLocator {
 
 	@BeforeClass
 	public void setUp() {
-		ChromeDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 
 	}
@@ -40,8 +38,8 @@ public class S10_RelativeLocator {
 	@Test(description = "Test books is left of book6 & below Book1")
 	public void frendlyOrRelativeLocator() {
 		driver.get("https://automationbookstore.dev/");
-		WebElement book5 = driver.findElement(RelativeLocator.withTagName("li").toLeftOf(By.id("pid6")).below(By.id("pid1")));
-		Assert.assertEquals("pid5", book5.getAttribute("id"));
+		WebElement book5 = driver.findElement(RelativeLocator.with(By.tagName("li")).toLeftOf(By.id("pid6")).below(By.id("pid1")));
+		Assert.assertEquals("pid5", book5.getDomAttribute("id"));
 	}
 	
 	@Test
@@ -51,13 +49,13 @@ public class S10_RelativeLocator {
 		JS.executeScript("window.scrollBy(0,1000)"); 
 		Thread.sleep(1000);
 		
-		driver.findElement(RelativeLocator.withTagName("input").toLeftOf(By.xpath("//label[normalize-space()='Check me out if you Love IceCreams!']"))).click();
+		driver.findElement(RelativeLocator.with(By.tagName("input")).toLeftOf(By.xpath("//label[normalize-space()='Check me out if you Love IceCreams!']"))).click();
 		Thread.sleep(1000);
 		
-		System.out.println(driver.findElement(RelativeLocator.withTagName("label").toRightOf(By.cssSelector("#exampleCheck1"))).getText());
+		System.out.println(driver.findElement(RelativeLocator.with(By.tagName("label")).toRightOf(By.cssSelector("#exampleCheck1"))).getText());
 		Thread.sleep(1000);
 		
-		driver.findElement(RelativeLocator.withTagName("input").below(By.cssSelector("label[for='dateofBirth']"))).sendKeys("01/01/2021");
+		driver.findElement(RelativeLocator.with(By.tagName("input")).below(By.cssSelector("label[for='dateofBirth']"))).sendKeys("01/01/2021");
 		
 	}
 }

@@ -27,7 +27,7 @@ WebElement ele = driver.findElement(By.cssSelector("#input"));
 JavascriptExecutor js = (JavascriptExecutor)driver;
 js.executeScript("arguments[0].value='apple';", ele);
 ***************************************************************/	
-public class S33_ShadowDomOrRoot {
+public class Test_33_ShadowDomOrRoot {
 
 	@Test
 	public void test_interact_element_insideShodowDom_root() {

@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S32_ContinueOnAlreadyOpenBrowser {
+public class Test_32_ContinueOnAlreadyOpenBrowser {
 	
 	@Test
 	public void continueOnBrowserOpenBy_AutomationScript_Part1() {

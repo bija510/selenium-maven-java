@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S25_setEncryptedPassword extends Base{
+public class Test_25_setEncryptedPassword extends Base{
 
 	@Test
 	public void setEncryptedPassword() {

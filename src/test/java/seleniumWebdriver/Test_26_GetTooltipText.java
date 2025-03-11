@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S26_GetTooltipText extends Base {
+public class Test_26_GetTooltipText extends Base {
 
 	@Test
 	public void tooltipText() {

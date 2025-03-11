@@ -5,13 +5,22 @@
 	<groupId>Maven_Seleniums</groupId>
 	<artifactId>Maven_Seleniums</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+  <properties>
+	<project.build.sourceEncodin>UTF-8</project.build.sourceEncodin>
+	<maven.compiler.target>21</maven.compiler.target>
+	<maven.compiler.source>21</maven.compiler.source>
+	<aspectj.version>l.9.22.l</aspectj.version>
+	<allure.version>2.29.0</allure.version> 
+  </properties>
+	
 	<dependencies>
 		 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-java</artifactId>
-		    <version>4.28.1</version>
+		    <version>4.29.0</version>
 		</dependency>
 
 		 
@@ -49,13 +58,6 @@
 			<groupId>com.relevantcodes</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>2.41.2</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-		<dependency>
-		    <groupId>io.github.bonigarcia</groupId>
-		    <artifactId>webdrivermanager</artifactId>
-		    <version>5.9.3</version>
 		</dependency>		
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->

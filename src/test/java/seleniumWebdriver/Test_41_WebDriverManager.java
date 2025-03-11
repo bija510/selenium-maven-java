@@ -12,10 +12,11 @@ public class Test_41_WebDriverManager {
 	 * GITHUB:- https://github.com/bonigarcia/webdrivermanager
 	 * NEW DOCS :- https://bonigarcia.dev/webdrivermanager/
 	 */
+	private WebDriver driver;
+	
 	@Test(description = "This is before version 5.0")
 	public void demo1() {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		
 		driver.get("https://www.google.com");
 		System.out.println(driver.getTitle());
@@ -24,9 +25,7 @@ public class Test_41_WebDriverManager {
 	}
 	
 	@Test(description = "This is after version 5.0")
-	public void demo2() {
-		WebDriver driver = WebDriverManager.chromedriver().create();
-		
+	public void demo2() {	
 		driver.get("https://www.google.com");
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
@@ -34,11 +33,10 @@ public class Test_41_WebDriverManager {
 	}
 	
 	@Test(description = "Injecting capabilities")
+	
 	public void demo3() {
 		ChromeOptions option = new ChromeOptions();
-		option.setHeadless(true);
-		
-		WebDriver driver = WebDriverManager.chromedriver().capabilities(option).create();
+		option.addArguments("--headless=new");
 		
 		driver.get("https://www.google.com");
 		System.out.println(driver.getTitle());

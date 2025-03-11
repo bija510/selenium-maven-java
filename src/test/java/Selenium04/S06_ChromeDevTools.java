@@ -6,16 +6,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v89.emulation.Emulation;
-import org.openqa.selenium.devtools.v89.log.Log;
-import org.openqa.selenium.devtools.v89.network.Network;
-import org.openqa.selenium.devtools.v89.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v89.performance.Performance;
-import org.openqa.selenium.devtools.v89.performance.model.Metric;
+import org.openqa.selenium.devtools.v131.emulation.Emulation;
+import org.openqa.selenium.devtools.v131.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v131.performance.Performance;
+import org.openqa.selenium.devtools.v131.performance.model.Metric;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.model.Log;
+import com.google.common.graph.Network;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -58,7 +60,7 @@ As well as [anything else that is possible within Chrome DevTools!]
 
 	/*******************************************************************************
 	 * Many users access web applications via handheld devices which are connected
-	 * to wifi or cellular networks. It’s not uncommon to reach a weak network
+	 * to wifi or cellular networks. Itï¿½s not uncommon to reach a weak network
 	 * signal, and therefore a slower internet connection.
 	 * 
 	 * It may be important to test how your application behaves under such

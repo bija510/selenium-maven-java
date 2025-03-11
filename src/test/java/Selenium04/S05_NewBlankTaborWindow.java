@@ -10,15 +10,12 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-
 
 public class S05_NewBlankTaborWindow {
 	
 	private static WebDriver driver;
 	@Test
 	public void blankTabWindow() throws IOException {
-		ChromeDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://demo.automationtesting.in/Register.html");
 		driver.manage().window().maximize();

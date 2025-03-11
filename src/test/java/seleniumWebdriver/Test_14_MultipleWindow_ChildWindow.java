@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S14_MultipleWindow_ChildWindow extends Base{
+public class Test_14_MultipleWindow_ChildWindow extends Base{
 
 	@Test
 	public void switchWndow() throws InterruptedException {		

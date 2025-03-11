@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v86.network.Network;
-import org.openqa.selenium.devtools.v86.network.model.Headers;
+import org.openqa.selenium.devtools.v85.network.Network;
+import org.openqa.selenium.devtools.v85.network.model.Headers;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 import utilites_library.Base;
@@ -18,7 +18,7 @@ public class S07_ChromeDevTools_WindowAuthPopUpTest_More extends Base {
 	private static final String password = "admin";
 
 /********************************************************************************
-1. Selenium 4 much awaited native support for Chrome DevTools Protocol through “DevTools” interface.
+1. Selenium 4 much awaited native support for Chrome DevTools Protocol through ï¿½DevToolsï¿½ interface.
 2. This helps us getting Chrome Development properties such as Application Cache, Fetch, Network,
 Performance, Profiler, Resource Timing, Security and Target CDP domains etc.
 3. Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. 

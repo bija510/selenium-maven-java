@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S24_returnType {
+public class Test_24_returnType {
 
 	public WebDriver driverForChrome() {
 		WebDriverManager.chromedriver().setup();

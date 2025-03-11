@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S28_Exceptions extends Base {
+public class Test_28_Exceptions extends Base {
 
 	@Test
 	public void Test_NoSuchElementException() throws Exception {

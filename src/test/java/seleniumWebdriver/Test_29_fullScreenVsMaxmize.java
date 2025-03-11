@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S29_fullScreenVsMaxmize {
+public class Test_29_fullScreenVsMaxmize {
 /*****************************************************************************************
  * When ==maximize()==the title bar & Task Manager etc. of the window is still displayed. 
  * In ===fullscreen()== mode the title bar is not displayed.

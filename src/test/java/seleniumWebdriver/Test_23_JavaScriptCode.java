@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utilites_library.Base;
 
-public class S23_JavaScriptCode extends Base{
+public class Test_23_JavaScriptCode extends Base{
 
 	@Test
 	public void allJSFunction() throws InterruptedException {

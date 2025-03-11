@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 
 
-public class S27_PdfReader {
+public class Test_27_PdfReader {
 
 	@Test
 	public void readPDFFile() throws IOException {

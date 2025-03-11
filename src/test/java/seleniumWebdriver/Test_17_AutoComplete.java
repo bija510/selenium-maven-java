@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S17_AutoComplete extends Base {
+public class Test_17_AutoComplete extends Base {
 	@Test
 	public void test_autoSuggest() throws InterruptedException {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");

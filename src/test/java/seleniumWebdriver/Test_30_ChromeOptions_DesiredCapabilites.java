@@ -28,7 +28,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S30_ChromeOptions_DesiredCapabilites {
+public class Test_30_ChromeOptions_DesiredCapabilites {
 
 	/********************************************************
 	 * For the official documentation please visit this page.
@@ -66,7 +66,7 @@ public class S30_ChromeOptions_DesiredCapabilites {
 	 * protocol that establishes a secure connection between the server and the
 	 * client(browser). The information sent using an SSL certificate is encrypted
 	 * and ensures that it delivers to the right server. It is a validator to the
-	 * website’s identity and helps to keep hackers at bay.
+	 * websiteï¿½s identity and helps to keep hackers at bay.
 	 ********************************************************************************/
 	@Test
 	public void Test_accept_insecure_certs() {
@@ -191,7 +191,7 @@ public class S30_ChromeOptions_DesiredCapabilites {
 		// disable flash and the PDF viewer Using ChromeOptions
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", preferences);
-		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 		options.setCapability(ChromeOptions.CAPABILITY, options);
 
 		//Injecting ChromeOptions options to WebDriver

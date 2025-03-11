@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S18_KeyboardEvents extends Base {
+public class Test_18_KeyboardEvents extends Base {
 
 	@Test
 	public void using1Keys(){

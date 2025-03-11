@@ -5,7 +5,7 @@ import java.net.URL;
 
 import org.testng.annotations.Test;
 
-public class S34_Compare_SiteUrl_with_its_IPAddress {
+public class Test_34_Compare_SiteUrl_with_its_IPAddress {
 
 	/**Use this url to find ip address of URL
 	 * https://www.ipvoid.com/find-website-ip/

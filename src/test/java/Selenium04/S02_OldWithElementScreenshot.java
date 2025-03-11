@@ -12,17 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-
 public class S02_OldWithElementScreenshot {
 	
 	private static WebDriver driver;
 	
 	@Test
-	public void testOnly() throws IOException {
-		//WebDriverManager.chromedriver().setup();
-		ChromeDriverManager.chromedriver().setup();
+	public void testOnly() throws IOException {	
 		driver = new ChromeDriver();
 		driver.get("http://demo.automationtesting.in/Register.html");
 		WebElement skillsDDL = driver.findElement(By.xpath("//select[@id='Skills']"));

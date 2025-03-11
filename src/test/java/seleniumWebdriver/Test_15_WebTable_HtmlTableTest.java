@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import utilites_library.Base;
 
-public class S15_WebTable_HtmlTableTest extends Base{
+public class Test_15_WebTable_HtmlTableTest extends Base{
 
 	@Test
 	public void Webtable() {
