@@ -4,14 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
-import utilites_library.Xls_Reader;
+import com.qa.utils.Base;
+import com.qa.utils.ExcelUtils;
 
 public class ExcelDataDrivenTest extends Base {
 
 	@Test
 	public void readingDataFromExcel() {
-	Xls_Reader reader = new Xls_Reader("../selenium-maven-java/Data/InputTestData.xlsx"); // objectName  || xPath
+	ExcelUtils reader = new ExcelUtils("../selenium-maven-java/Data/InputTestData.xlsx"); // objectName  || xPath
 	String sheetName = "Sheet1";
 
 	/**************************************************************************

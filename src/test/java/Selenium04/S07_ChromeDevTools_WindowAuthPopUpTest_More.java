@@ -10,7 +10,8 @@ import org.openqa.selenium.devtools.v85.network.Network;
 import org.openqa.selenium.devtools.v85.network.model.Headers;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 public class S07_ChromeDevTools_WindowAuthPopUpTest_More extends Base {
 

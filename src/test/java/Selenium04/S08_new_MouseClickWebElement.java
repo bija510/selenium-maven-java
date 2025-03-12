@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
+import com.qa.utils.Base;
 
 public class S08_new_MouseClickWebElement extends Base {
 

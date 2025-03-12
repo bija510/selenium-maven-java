@@ -6,7 +6,8 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 public class robotClass_FileploadTest extends Base {
 	

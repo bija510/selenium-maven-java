@@ -1,4 +1,4 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BrowserUtility {
+public class SeleniumUtils {
 	
 	public static WebDriver driver;
 	public Properties prop ;

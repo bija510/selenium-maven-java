@@ -1,4 +1,4 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.io.File;
 import java.util.Calendar;

@@ -1,11 +1,11 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class mobileTestingSetup {
+public class MobileUtils {
 
 	public ChromeOptions CapInjector(String deviceName) {
 		// Setting up device = iPhone X

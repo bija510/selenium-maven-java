@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
+import com.qa.utils.Base;
 
 public class Test_11_ExplicitWait extends Base{
 	

@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
+import com.qa.utils.Base;
 
 public class Test_21_Screenshot extends Base{
 

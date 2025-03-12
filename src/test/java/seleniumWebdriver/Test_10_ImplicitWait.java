@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
+import com.qa.utils.Base;
 
 public class Test_10_ImplicitWait extends Base{
 

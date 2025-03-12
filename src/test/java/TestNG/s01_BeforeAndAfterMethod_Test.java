@@ -13,8 +13,10 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.qa.utils.CommonUtils;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utilites_library.CommonUtil;
 
 public class s01_BeforeAndAfterMethod_Test {
 	/*********************************************************************************
@@ -44,8 +46,8 @@ public class s01_BeforeAndAfterMethod_Test {
 	
 	@AfterMethod()
 	public void tearDown(ITestResult result) throws IOException{
-		String monthAndDate = CommonUtil.getMonthAndDate();
-		String digit6TimeStamp = CommonUtil.get6DigitTimeStamp();
+		String monthAndDate = CommonUtils.getMonthAndDate();
+		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
 			
 		if(ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;

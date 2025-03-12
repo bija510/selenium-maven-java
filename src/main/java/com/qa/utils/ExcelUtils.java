@@ -1,4 +1,4 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Xls_Reader {
+public class ExcelUtils {
 	public String path;
 	public FileInputStream fis = null;
 	public FileOutputStream fileOut = null;
@@ -21,7 +21,7 @@ public class Xls_Reader {
 	private XSSFRow row = null;
 	private XSSFCell cell = null;
 
-	public Xls_Reader(String path) {
+	public ExcelUtils(String path) {
 
 		this.path = path;
 		try {
@@ -85,7 +85,7 @@ public class Xls_Reader {
 
 			// if (cell.getCellType().STRING != null)
 
-			// if(cell.getCellType()==Xls_Reader.CELL_TYPE_STRING)
+			// if(cell.getCellType()==ExcelUtils.CELL_TYPE_STRING)
 			// return cell.getStringCellValue();
 			else if ((cell.getCellType().name().equals("NUMERIC")) || (cell.getCellType().name().equals("FORMULA"))) {
 
@@ -271,7 +271,7 @@ public class Xls_Reader {
 	// hlink_style.setFont(hlink_font);
 	// //hlink_style.setWrapText(true);
 	//
-	// XSSFHyperlink link = createHelper.createHyperlink(Xls_Reader.LINK_FILE);
+	// XSSFHyperlink link = createHelper.createHyperlink(ExcelUtils.LINK_FILE);
 	// link.setAddress(url);
 	// cell.setHyperlink(link);
 	// cell.setCellStyle(hlink_style);

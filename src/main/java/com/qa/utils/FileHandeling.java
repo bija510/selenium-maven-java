@@ -1,4 +1,4 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,8 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-
-import org.apache.tools.ant.taskdefs.Copyfile;
 
 public class FileHandeling {
 

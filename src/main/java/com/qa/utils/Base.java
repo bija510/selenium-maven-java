@@ -1,4 +1,4 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +19,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
+/**
+ * Blueprint for other test classes, allowing them to inherit its methods and properties. 
+ * @see It Lunch and close the broswers. [Browser ie:- Chrome, Edge, Firefox, Safari]
+ * @see It Capture Screenshot in case of Failure.
+ */
 public class Base {
 	protected WebDriver driver;
 	public Properties prop;
@@ -46,14 +51,14 @@ public class Base {
 
 	@AfterMethod
 	public void closeLast(ITestResult result) throws IOException {
-		String monthAndDate = CommonUtil.getMonthAndDate();
-		String digit6TimeStamp = CommonUtil.get6DigitTimeStamp();
+		String monthAndDate = CommonUtils.getMonthAndDate();
+		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
 
 		if (ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_"
 					+ digit6TimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/" + failScreenShotName + ".png"));// result+result.getName()
+			FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/" + failScreenShotName + ".png"));// result+result.getName()
 		}
 	}
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import utilites_library.Base;
+import com.qa.utils.Base;
 
 public class Test_18_KeyboardEvents extends Base {
 

@@ -7,7 +7,8 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 
 public class PropertiesFileDataDrivenTest extends Base{

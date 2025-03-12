@@ -1,9 +1,14 @@
-package utilites_library;
+package com.qa.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CommonUtil {
+/**
+ * This utility methods can be used across different :- 
+ * @see a projects or test cases, 
+ * @see a without necessarily being selenium-specific. 
+ */
+public class CommonUtils {
 
 	public static String getMonthAndDate() {
 		String pattern = "yyyy-MMdd";

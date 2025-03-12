@@ -6,7 +6,8 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 public class Test_22_TryCatchFinally extends Base{
 

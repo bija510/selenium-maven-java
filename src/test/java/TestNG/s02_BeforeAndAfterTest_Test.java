@@ -14,8 +14,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.qa.utils.CommonUtils;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utilites_library.CommonUtil;
 
 public class s02_BeforeAndAfterTest_Test {
 WebDriver driver = null;
@@ -50,8 +52,8 @@ WebDriver driver = null;
 	
 	@AfterMethod
     public void closeLast(ITestResult result) throws IOException, InterruptedException {
-		String monthAndDate = CommonUtil.getMonthAndDate();
-		String digit6TimeStamp = CommonUtil.get6DigitTimeStamp();
+		String monthAndDate = CommonUtils.getMonthAndDate();
+		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
 			
 		if(ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;

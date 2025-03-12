@@ -12,8 +12,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.qa.utils.MobileUtils;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utilites_library.mobileTestingSetup;
 
 public class SampleMobileTest {
 	/*******************************************************************
@@ -26,7 +27,7 @@ public class SampleMobileTest {
 	@Test
 	public void justTest() {
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver(new mobileTestingSetup().CapInjector("iPhone X"));
+		WebDriver driver = new ChromeDriver(new MobileUtils().CapInjector("iPhone X"));
 		driver.manage().window().maximize();
 
 		String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); // navigator.appVersion
@@ -71,7 +72,7 @@ public class SampleMobileTest {
 	@Test
 	public void walmart() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver(new mobileTestingSetup().CapInjector("iPhone X"));
+		WebDriver driver = new ChromeDriver(new MobileUtils().CapInjector("iPhone X"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// Verify desired device open in Browser

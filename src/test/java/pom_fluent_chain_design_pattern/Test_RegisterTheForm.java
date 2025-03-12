@@ -1,7 +1,8 @@
 package pom_fluent_chain_design_pattern;
 
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 /**
  * https://www.vinsguru.com/selenium-webdriver-how-to-design-page-objects-in-fluent-style/

@@ -2,7 +2,8 @@ package pom_traditional_design_pattern;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilites_library.Base;
+
+import com.qa.utils.Base;
 
 public class FbSignUp_POM_Test extends Base{
 

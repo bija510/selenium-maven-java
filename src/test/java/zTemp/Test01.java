@@ -14,7 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 
 public class Test01 {
 
@@ -25,8 +24,7 @@ public class Test01 {
 	private static WebDriver driver;
 
 	@BeforeClass
-	public void setUp() {
-		ChromeDriverManager.chromedriver().setup();
+	public void setUp() {		
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
@@ -42,9 +40,9 @@ public class Test01 {
 	@Test(description = "Test books is left of book6 & below Book1")
 	public void frendlyOrRelativeLocator() {
 		driver.get("https://automationbookstore.dev/");
-		WebElement book5 = driver.findElement(RelativeLocator.withTagName("li").toLeftOf(By.id("pid6")).below(By.id("pid1")));
-		System.out.println(book5.getAttribute("id"));
-		Assert.assertEquals("pid5", book5.getAttribute("id"));
+		WebElement book5 = driver.findElement(RelativeLocator.with(By.tagName("li")).toLeftOf(By.id("pid6")).below(By.id("pid1")));
+		System.out.println(book5.getDomAttribute("id"));
+		Assert.assertEquals("pid5", book5.getDomAttribute("id"));
 	}
 	
 	@Test
@@ -54,13 +52,13 @@ public class Test01 {
 		JS.executeScript("window.scrollBy(0,1000)"); 
 		Thread.sleep(1000);
 		
-		driver.findElement(RelativeLocator.withTagName("input").toLeftOf(By.xpath("//label[normalize-space()='Check me out if you Love IceCreams!']"))).click();
+		driver.findElement(RelativeLocator.with(By.tagName("input")).toLeftOf(By.xpath("//label[normalize-space()='Check me out if you Love IceCreams!']"))).click();
 		Thread.sleep(1000);
 		
-		System.out.println(driver.findElement(RelativeLocator.withTagName("label").toRightOf(By.cssSelector("#exampleCheck1"))).getText());
+		System.out.println(driver.findElement(RelativeLocator.with(By.tagName("label")).toRightOf(By.cssSelector("#exampleCheck1"))).getText());
 		Thread.sleep(1000);
 		
-		driver.findElement(RelativeLocator.withTagName("input").below(By.cssSelector("label[for='dateofBirth']"))).sendKeys("01/01/2021");
+		driver.findElement(RelativeLocator.with(By.tagName("input")).below(By.cssSelector("label[for='dateofBirth']"))).sendKeys("01/01/2021");
 		
 	}
 
