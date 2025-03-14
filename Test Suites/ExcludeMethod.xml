@@ -5,7 +5,7 @@
 
 	<test thread-count="5" name="Test">
 	    <classes>
-	    	<class name="TestNG.s07_priorityTest">
+	    	<class name="com.testng.demo.Test07Priority">
 			    <methods>
 			    	<exclude name="methodB"></exclude>
 			    </methods>

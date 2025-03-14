@@ -34,10 +34,9 @@ public class Base {
 	@BeforeClass(alwaysRun=true)
 	public void setUp(){
 		if(driver==null) {
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://demo.automationtesting.in/Register.html");
+//		driver.get("http://demo.automationtesting.in/Register.html");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
 		}	
 	}

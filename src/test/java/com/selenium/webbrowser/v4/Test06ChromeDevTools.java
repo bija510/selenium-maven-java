@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v131.emulation.Emulation;
 import org.openqa.selenium.devtools.v131.network.model.ConnectionType;
@@ -15,9 +16,10 @@ import org.openqa.selenium.devtools.v131.performance.Performance;
 import org.openqa.selenium.devtools.v131.performance.model.Metric;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.openqa.selenium.devtools.v131.network.Network;
 
 import com.aventstack.extentreports.model.Log;
-import com.google.common.graph.Network;
+//import com.google.common.graph.Network;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -69,10 +71,18 @@ As well as [anything else that is possible within Chrome DevTools!]
 	 ********************************************************************************/
 	@Test
 	public void test_set_network_or_stimulate_network_speed() {
+		 // Setup ChromeDriver with ChromeOptions (make sure you specify path if needed)
+        ChromeOptions options = new ChromeOptions();
+        ChromeDriver driver = new ChromeDriver(options);
+        
 		DevTools devTools = driver.getDevTools();
 		devTools.createSession();
 		devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-		devTools.send(Network.emulateNetworkConditions(false, 20, 20, 50, Optional.of(ConnectionType.CELLULAR2G)));
+		devTools.send(Network.emulateNetworkConditions(
+				false,
+				20,
+				20,
+				50, Optional.of(ConnectionType.CELLULAR2G), java.util.Optional.empty(), java.util.Optional.empty(), java.util.Optional.empty()));
 		driver.get("https://www.google.com");
 	}
 
@@ -111,19 +121,6 @@ As well as [anything else that is possible within Chrome DevTools!]
 		chromeDevTools.send(Network.disable());		
 	}
 
-	@Test
-	public void capture_chrome_console_logs() {
-		DevTools chromeDevTools = driver.getDevTools();
-		chromeDevTools.createSession();
-
-		chromeDevTools.send(Log.enable());
-		chromeDevTools.addListener(Log.entryAdded(),
-				logEntry -> {
-					System.out.println("log: "+logEntry.getText());
-					System.out.println("level: "+logEntry.getLevel());
-				});
-		driver.get("https://testersplayground.herokuapp.com/console-5d63b2b2-3822-4a01-8197-acd8aa7e1343.php");
-	}
 	
 	/************************************************************************************************
 	  Poor performing websites and slower loading pages make unhappy customers.

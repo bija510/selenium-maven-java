@@ -12,9 +12,10 @@ public class Test03DescribeRunTimesAndTimeout extends Base {
 	@Test(invocationCount = 2)
 	public void methodB(){
 		driver.get("https://www.walmart.com/");
+		System.out.println("==>" + driver.getTitle());
 	}
 	
-	@Test(timeOut = 3000)
+	@Test(timeOut = 5000)
 	public void methodC(){
 		driver.get("https://www.amazon.com/");
 	}

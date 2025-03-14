@@ -28,7 +28,6 @@ public class Test01BeforeAndAfterMethod {
 	
 	@BeforeMethod()
 	public void setUp(){
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/signup");
 	}
@@ -54,7 +53,7 @@ public class Test01BeforeAndAfterMethod {
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ failScreenShotName +".png"));//result+result.getName()		
 		}
-		driver.close();
+		driver.quit();
 		driver =null;
 	}
 	

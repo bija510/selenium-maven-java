@@ -28,19 +28,18 @@ WebDriver driver = null;
 	 ************************************************************************************/
 	@BeforeTest()
 	public void setUp(){
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.get("https://www.facebook.com/signup");
+		driver.get("https://demo.automationtesting.in/Register.html");
 	}
 	
 	@Test()
 	public void enterFirstName(){
-		driver.findElement(By.xpath("//input[@id='u_0_n_Uu']")).sendKeys("David");
+		driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("David");
 	}
 	
 	@Test()
 	public void enterPhoneNumber() throws Exception{
-		driver.findElement(By.xpath("//input[@id='password_step_input']")).sendKeys("111-222-3333");
+		driver.findElement(By.xpath("//input[@type='tel']")).sendKeys("111-222-3333");
 		throw new Exception("====fail====");
 	}
 	

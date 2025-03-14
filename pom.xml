@@ -5,60 +5,64 @@
 	<groupId>Maven_Seleniums</groupId>
 	<artifactId>Maven_Seleniums</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-  <properties>
-	<project.build.sourceEncodin>UTF-8</project.build.sourceEncodin>
-	<maven.compiler.target>21</maven.compiler.target>
-	<maven.compiler.source>21</maven.compiler.source>
-	<aspectj.version>l.9.22.l</aspectj.version>
-	<allure.version>2.29.0</allure.version> 
-  </properties>
-	
+
+	<properties>
+		<project.build.sourceEncodin>UTF-8</project.build.sourceEncodin>
+		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<aspectj.version>l.9.22.l</aspectj.version>
+		<allure.version>2.29.0</allure.version>
+	</properties>
+
 	<dependencies>
-		 
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
-		    <groupId>org.seleniumhq.selenium</groupId>
-		    <artifactId>selenium-java</artifactId>
-		    <version>4.29.0</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.29.0</version>
 		</dependency>
 
-		 
-		 <!-- For Shadow Dom Handeling-->
-		 <!--https://github.com/sukgu/shadow-automation-selenium-->
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v130 -->
 		<dependency>
-		  	<groupId>io.github.sukgu</groupId>
-		  	<artifactId>automation</artifactId>
-		 	<version>0.1.0</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-devtools-v130</artifactId>
+			<version>4.28.1</version>
 		</dependency>
-		
+
+
+		<!-- For Shadow Dom Handeling-->
+		<!--https://github.com/sukgu/shadow-automation-selenium-->
+		<dependency>
+			<groupId>io.github.sukgu</groupId>
+			<artifactId>automation</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+
 		<!-- https://github.com/adiralashiva8/testng-metrics -->
 		<dependency>
-	  		<groupId>com.github.adiralashiva8</groupId>
-	 	 	<artifactId>testng-metrics</artifactId>
-	  		<version>1.6</version>
+			<groupId>com.github.adiralashiva8</groupId>
+			<artifactId>testng-metrics</artifactId>
+			<version>1.6</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<dependency>
-		    <groupId>io.qameta.allure</groupId>
-		    <artifactId>allure-testng</artifactId>
-		    <version>2.13.9</version>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.13.9</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>3.0.6</version>
+			<version>5.1.2</version>
 		</dependency>
 
-     <!-- com.relevantcodes is for the extent report by running testng.xml file-->
-     <!-- This This artifact was moved to: com.aventstack » extentreports -->
-		<dependency>
-			<groupId>com.relevantcodes</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>2.41.2</version>
-		</dependency>		
+		<!-- com.relevantcodes is for the extent report by running testng.xml file-->
+		
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -68,7 +72,8 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -103,11 +108,11 @@
 
 		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
 		<dependency>
-		    <groupId>org.apache.pdfbox</groupId>
-		    <artifactId>pdfbox</artifactId>
-		    <version>2.0.21</version>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.21</version>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -126,17 +131,17 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.0</version>
-            <configuration>
-               <suiteXmlFiles>
-               <suiteXmlFile>./Test Suites/${testngFile}</suiteXmlFile>
-               </suiteXmlFiles>
-            </configuration>
-        </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>./Test Suites/${testngFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

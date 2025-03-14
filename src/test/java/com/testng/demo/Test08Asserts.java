@@ -1,20 +1,23 @@
 package com.testng.demo;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.qa.utils.Base;
 
-public class Test08Asserts extends Base {
+@Listeners(com.testng.demo.Test09listener.class)
+
+public class Test08Asserts extends Base{
 
 	@Test
 	public void assertDemo() throws InterruptedException {
-		/**********************************************************************
-		 * From here no more Writing ChromeDriver setUp instead extends to Base 
-		 **********************************************************************/
-			
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		
 		//Example:- 1

@@ -1,7 +1,7 @@
-# **Selenium-WebDriver-3**
+# **Selenium-WebDriver**
 ## **Introduction & Why selenium?**
 ***
->[Free] Est in 2004 Open source.
+>Selenium WebDriver, a programming interface developed by Simon Stewart in 2006.
 
 >Support all major 3 plateform (os) Window , Mac & linux.
 
@@ -17,9 +17,9 @@
 
 >[Free] Git {Version control tool} & gitHib {free cloud host repositories enabling collaboration}
 
->What else we need we can use Apache Maven Project with TestNG framework.
+>[Free] TestNG framework.
 
->Last but no least it support So many Plugins. any body will be amazed with the variety of flavor of plugins which are also free.
+>[Free] Support So many Plugins. any body will be amazed with the variety of flavor of plugins.
 ***
 
 ## Download, Install and Setup.

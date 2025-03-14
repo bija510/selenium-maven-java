@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+	    <listener class-name="com.testng.demo.Test09listener" />
+		<listener class-name="com.qa.utils.ExtentReportManager" />
+	</listeners>
+
+	<test name="Test">
+		<classes>
+			<class name="com.testng.demo.Test05SkipAndDepends"></class>
+			<class name="com.testng.demo.Test07Priority"></class>
+		</classes>
+	</test>
+	
+</suite> 
+
+
+

@@ -6,6 +6,9 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
@@ -16,6 +19,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -24,7 +28,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.openqa.selenium.logging.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -36,9 +42,9 @@ public class Test30ChromeOptionsDesiredCapabilites {
 	 * depreciated & merged with ChromeOptions class
 	 *********************************************************/
 
+	  protected WebDriver driver;
 	@Test
 	public void open_chrome_in_headless_mode() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
 		options.setCapability(ChromeOptions.CAPABILITY, options);
@@ -50,7 +56,6 @@ public class Test30ChromeOptionsDesiredCapabilites {
 
 	@Test
 	public void open_chrome_maximized_and_in_incognito_mode() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("-incognito");
 		options.addArguments("--start-maximized");
@@ -70,7 +75,6 @@ public class Test30ChromeOptionsDesiredCapabilites {
 	 ********************************************************************************/
 	@Test
 	public void Test_accept_insecure_certs() {
-		WebDriverManager.chromedriver().setup();
 
 		// To accept the Insecure certificate when we try to open URL it pop up first we
 		// have to accept that.
@@ -84,7 +88,6 @@ public class Test30ChromeOptionsDesiredCapabilites {
 
 	@Test
 	public void Test_MergeChromeOptions_with_desiredCapabilities() {
-		WebDriverManager.chromedriver().setup();
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setAcceptInsecureCerts(true);
 		ChromeOptions option = new ChromeOptions();
@@ -282,4 +285,23 @@ public class Test30ChromeOptionsDesiredCapabilites {
 		driver.get("https://google.com");
 
 	}
+	
+	 @Test
+	  public void setPermission() {
+	    ChromeDriver driver = new ChromeDriver();
+	    driver.get("https://www.selenium.dev");
+
+	    driver.setPermission("camera", "denied");
+
+	    // Verify the permission state is 'denied'
+	    String script = "return navigator.permissions.query({ name: 'camera' })" +
+	            "    .then(permissionStatus => permissionStatus.state);";
+	    String permissionState = (String) driver.executeScript(script);
+
+	    Assert.assertEquals("denied", permissionState);
+	    driver.quit();
+	  }
+
+	 
+
 }
