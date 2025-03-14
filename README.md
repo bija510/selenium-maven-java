@@ -1,49 +1,58 @@
 # **Selenium-WebDriver-3**
 ## **Introduction & Why selenium?**
 ***
->Developed in 2004
+>[Free] Est in 2004 Open source.
 
->Open source & absolutely free.
+>Support all major 3 plateform (os) Window , Mac & linux.
 
->Huge community support. Nobody will never stuck there is always a solution.
+>Support all top browser:- Chrome, MSEdge, FireFox, Safari.
 
->Support all major 3 plateform Window , Mac & linux.
+>[Free] Support all major Top programming language:- Java, Javascriot, Python ,C#, Ruby
 
->Support all major Top programming language:- Java, Javascriot, Python ,C#, Ruby
+>[Free] Eclipse IDE to Develop test case.
 
->Support all top browser:- Chrome, MSEdge, FireFox, Safari, IE, Opera
+>[Free] Support Jenkin as CI-CD tools.
 
->Eclipse free Tool as IDE to Develop test case which is also Free.
+>[Free] Maven build management tool.
 
->Server start not required.
-
->Support Jenkin as CI CD tools which is free too.
+>[Free] Git {Version control tool} & gitHib {free cloud host repositories enabling collaboration}
 
 >What else we need we can use Apache Maven Project with TestNG framework.
 
 >Last but no least it support So many Plugins. any body will be amazed with the variety of flavor of plugins which are also free.
 ***
 
-## How to download Eclipse and Install TestNG plugin
-1. Install eclipse version 2020-03 & eclipse version after that don't support Java 1.8 it only support java 11 <
-2. Go to this site https://github.com/cbeust/testng-eclipse#install-snapshot
-3. Copy this LATEST RELEASE	= https://testng.org/testng-eclipse-update-site
-4. In Eclipse ==> Help==> Install new software==> work with = https://testng.org/testng-eclipse-update-site
-5. And give name TestNG and it will found check & install
+## Download, Install and Setup.
+#### Eclipse IDE Download 
+>https://www.eclipse.org/downloads/packages/
+#### Install TestNG in Eclipse  
+>Help >> Eclipse Market place >> search >> testng >> Install.
 
-## Maven Lifecycle
-1. validate
-2. compile
-3. test
-4. package
-5. integration test
-6. verify
-7. install - install in local rep
-8. deploy - install in remote rep to use by other project
+#### Install Java
+>Download Java JDK: https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+```
+1. Install next .... finished
+2. Setting JAVA_HOME:
+3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
+4. System Variable >> new >> Variable name = JAVA_HOME & Variable value = C:\Program Files\Java\jdk-21 >> OK
+5. System variable >> path >> edit >> new >>  C:\Program Files\apache-maven-3.9.9\bin >> OK
+6. Command Prompt : java --version >> will display Java Version.
+```
+#### Install Apache Maven
+> Download Apache maven: https://maven.apache.org/download.cgi
+```
+1. Install next .... finished
+2. Setting MAVEN_HOME:
+3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
+4. User Variable >> new >> Variable name = MAVEN_HOME & Variable value = C:\Program Files\apache-maven-3.9.9 >> OK
+5. System variable >> path >> edit >> new >>  C:\Program Files\apache-maven-3.9.9\bin
+6. Command Prompt : mvn -v >> will display Maven Version.
 
-This source code will provide all the demo test case using maven project for selenium webdriver 3 and 4.
-Other demo test case are:-
+```
+#### For the pom.xml dependencies
+> https://mvnrepository.com/
 
+## This Demo Project cover Selenium Webdriver 3 and upto Selenium webdriver version 4.29
 1. Basic selenium webdriver actions.
 2. Read PDF Files using pdfbox 
 ```
@@ -89,6 +98,8 @@ Other demo test case are:-
     * page object model
 13. Singleton Test case Design Pattern demo.
 14. Demo test case to Handle **Shadow Dom**.
+15. Find Broken Links Using Selenium WebDriver
+16. Relative or friendly locator.
 
 ```
     <dependency>
@@ -136,24 +147,12 @@ Other demo test case are:-
 ```
 15. Parallel execution demo test case in two different flavor.
 
-# **Selenium-WebDriver-4**
+# For Report
+> TestNG Report 
 
-1. How to take WebElement screenshot.
-2. How to take screenshot of a group of WebElement.
-3. GetRect Method.
-4. Open new blank Tab.
-5. ChromeDevtools demo.
-6. Relative or friendly locator.
+> Maven Report
 
-## Why should you check Broken Links?
-1. Broken links are a big turn-off for the visitors who land on your website. 
-2. Broken Links can hurt the user experience.
-3. Removal of broken (or dead) links is essential for SEO (Search Engine Optimization), as it can affect the site’s rankings on search engines (e.g., Google).
-4. Broken links testing can be done using Selenium WebDriver on a web page, which in turn can be used to remove the site’s dead links.
+> Allure Report
 
-### How to Find Broken Links Using Selenium WebDriver?
-1. Use the < a > tag to collect details of all the links present on the webpage.
-2. Send an HTTP request for every link.
-3. Verify the corresponding response code received in response to the request sent in the previous step.
-4. Validate whether the link is broken or not based on the response code sent by the server.
-5. Repeat steps (2-4) for every link present on the page.
+> Extent Report
+
