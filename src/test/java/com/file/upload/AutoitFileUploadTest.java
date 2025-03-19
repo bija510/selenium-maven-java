@@ -33,8 +33,13 @@ public class AutoitFileUploadTest extends Base{
 		
 		WebElement fileUpload = driver.findElement(By.xpath("//div[@class='btn btn-primary btn-file']"));
 		fileUpload.click();
-		Runtime.getRuntime().exec("../selenium-maven-java/Autoit/autoit.exe");
-	
+		Thread.sleep(2000);
+		Process process = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "../selenium-maven-java/Include/Autoit/autoit.exe");
+		process.waitFor();
+			
+		System.out.println("---Filed uploaded------");
+		
+		Thread.sleep(4000);
 		
 	}
 

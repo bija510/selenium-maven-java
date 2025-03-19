@@ -1,7 +1,6 @@
 package com.selenium.webbrowser.v4;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
@@ -11,8 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.utils.FileUtil;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
