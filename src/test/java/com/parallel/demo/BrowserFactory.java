@@ -7,8 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BrowserFactory {
 	
 	private static BrowserFactory instance = null;
@@ -37,8 +35,6 @@ public class BrowserFactory {
 			chOptions.setExperimentalOption("prefs", chromePrefs);
 			chOptions.addArguments("--disable-plugins", "--disable-extensions", "--disable-popup-blocking");
 			chOptions.setCapability("applicationCacheEnabled", false);
-			//System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
 			webDriver.set(new ChromeDriver());
 		}
 	}

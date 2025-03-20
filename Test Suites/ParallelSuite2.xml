@@ -7,12 +7,11 @@
   for 2 browser & 3 for 3 Browser open in <suite after name That's all
   ===================================================================-->
   
-	<test thread-count="5" name="Test">
+	<test name="Test1">
 		<classes>
-			<class name="TestNG.s12_GroupsTest" />
-			<class name="TestNG.s04ReporterLogTest" />
-			<class name="TestNG.s07_priorityTest" />
+			<class name="com.testng.demo.TestDemo1" />
+			<class name="com.testng.demo.TestDemo2" />
+			<class name="com.testng.demo.TestDemo3" />
 		</classes>
 	</test>
-
 </suite>

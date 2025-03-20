@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Test01OpenCloseBrowser {
 
 	public static void main(String[] args) throws InterruptedException {	
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
@@ -20,9 +19,5 @@ public class Test01OpenCloseBrowser {
 		//driver.close();	
 		driver.quit();
 	}
-	
-//	static void testing() throws InterruptedException {
-//		main(null);
-//	}
 
 }

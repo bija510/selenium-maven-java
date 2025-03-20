@@ -16,15 +16,13 @@ import org.testng.annotations.Test;
 
 import com.qa.utils.CommonUtils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class Test01BeforeAndAfterMethod {
 	/*********************************************************************************
 	 * NOTE:- Always add Test at beginning or end of class name 
 	 * This is not right approach of opening browser Multiple time. for the same page
 	 * This will be good if we are using Module concept but this is Page concept
 	 *********************************************************************************/
-	private WebDriver driver = null;
+	private WebDriver driver;
 	
 	@BeforeMethod()
 	public void setUp(){
@@ -46,10 +44,10 @@ public class Test01BeforeAndAfterMethod {
 	@AfterMethod()
 	public void tearDown(ITestResult result) throws IOException{
 		String monthAndDate = CommonUtils.getMonthAndDate();
-		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
+		String getTimeStamp = CommonUtils.getTimeStamp();
 			
 		if(ITestResult.FAILURE == result.getStatus()) {
-			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;
+			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + getTimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ failScreenShotName +".png"));//result+result.getName()		
 		}

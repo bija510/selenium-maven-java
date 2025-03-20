@@ -52,11 +52,11 @@ public class Base {
 	@AfterMethod
 	public void closeLast(ITestResult result) throws IOException {
 		String monthAndDate = CommonUtils.getMonthAndDate();
-		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
+		String digitTimeStamp = CommonUtils.getTimeStamp();
 
 		if (ITestResult.FAILURE == result.getStatus()) {
 			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_"
-					+ digit6TimeStamp;
+					+ digitTimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/" + failScreenShotName + ".png"));// result+result.getName()
 		}

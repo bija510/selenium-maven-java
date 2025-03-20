@@ -7,9 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Test02RefreshForwardBack {
 
-	public static void main(String[] args) throws InterruptedException {
-		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Driver/chromedriver.exe");
+	public static void main(String[] args) throws InterruptedException {	
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("https://www.facebook.com/");

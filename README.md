@@ -15,11 +15,13 @@
 
 >[Free] Maven build management tool.
 
->[Free] Git {Version control tool} & gitHib {free cloud host repositories enabling collaboration}
+>[Free] Git {Version control tool} & gitHub {free cloud host repositories enabling collaboration}
 
 >[Free] TestNG framework.
 
->[Free] Support So many Plugins. any body will be amazed with the variety of flavor of plugins.
+>[Free] Support So many Plugins. anybody will be amazed with the variety of flavor of plugins.
+
+>[Free] Html report by maven, testng, Extent report, and allure report.
 ***
 
 ## Download, Install and Setup.
@@ -35,7 +37,7 @@
 2. Setting JAVA_HOME:
 3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
 4. System Variable >> new >> Variable name = JAVA_HOME & Variable value = C:\Program Files\Java\jdk-21 >> OK
-5. System variable >> path >> edit >> new >>  C:\Program Files\apache-maven-3.9.9\bin >> OK
+5. System variable >> path >> edit >> new >>  C:\Program Files\Java\jdk-21\bin >> OK
 6. Command Prompt : java --version >> will display Java Version.
 ```
 #### Install Apache Maven
@@ -406,14 +408,6 @@ This project is licensed under the MIT License.
 	</build>
 
 ```
-15. Parallel execution demo test case in two different flavor.
+15. Parallel execution demo test case Test Suites/Parallel..*.
 
-# For Report
-> TestNG Report 
-
-> Maven Report
-
-> Allure Report
-
-> Extent Report
 

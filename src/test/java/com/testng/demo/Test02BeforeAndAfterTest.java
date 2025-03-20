@@ -52,10 +52,10 @@ WebDriver driver = null;
 	@AfterMethod
     public void closeLast(ITestResult result) throws IOException, InterruptedException {
 		String monthAndDate = CommonUtils.getMonthAndDate();
-		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
+		String getTimeStamp = CommonUtils.getTimeStamp();
 			
 		if(ITestResult.FAILURE == result.getStatus()) {
-			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + digit6TimeStamp;
+			String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_" + getTimeStamp;
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("../Maven_Seleniums/Screenshot/"+ failScreenShotName +".png"));//result+result.getName()		
 		}

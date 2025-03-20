@@ -4,9 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * This utility methods can be used across different :- 
- * @see a projects or test cases, 
- * @see a without necessarily being selenium-specific. 
+ * This class provides globally reusable methods.
  */
 public class CommonUtils {
 
@@ -17,12 +15,21 @@ public class CommonUtils {
 		String monthAndDate = date.substring(5);
 		return monthAndDate;
 	}
-
-	public static String get6DigitTimeStamp() {
-		String pattern2 = "HHmmss";
-		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat(pattern2);
-		String digit6TimeStamp = simpleDateFormat2.format(new Date());
-		return digit6TimeStamp;
+	/**
+	 * <ul>
+	 * <li> Format: </li>
+	 * <li> hh – Hour in 12-hour format (01 to 12)  </li>
+	 * <li> mm – Minutes (00 to 59)  </li>
+	 * <li> ss – Seconds (00 to 59)  </li>
+	 * <li> SSS – Milliseconds (000 to 999)  </li>
+	 * <li> a – AM or PM  </li>
+	 * </ul>
+	 * @return current timestamp in the format "hh-mm-ss-SSS"
+	 */
+	public static String getTimeStamp() {
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("hh-mm-ss-SSSS");
+		String digitTimeStamp = simpleDateFormat2.format(new Date());
+		return digitTimeStamp;
 	}
 
 }

@@ -8,7 +8,7 @@
 		<parameter name="Password" value="1234"></parameter>
 
 		<classes>
-			<class name="TestNG.s12_Parameterization_fromXmlFileTest"></class>
+			<class name="com.testng.demo.Test12ParameterizationfromXmlFile"></class>
 		</classes>
 
 	</test> <!-- Test -->

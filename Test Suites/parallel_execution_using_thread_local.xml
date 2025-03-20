@@ -4,13 +4,13 @@
 
 	<test name="Test">
 		<classes>
-			<class name="helperclasses.paralleldemo"></class>
+			<class name="com.parallel.demo.ParallelDemo"></class>
 		</classes>
 	</test>
 
 	<test name="Test1">
 		<classes>
-			<class name="helperclasses.paralleldemo2"></class>
+			<class name="com.parallel.demo.ParallelDemo2"></class>
 		</classes>
 	</test>
 

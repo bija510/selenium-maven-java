@@ -2,6 +2,8 @@ package com.ztemp;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -20,19 +22,9 @@ public class Test03 {
 	
 	@Test
 	public void test_lunch() throws IOException {
-		driver = new ChromeDriver();
-		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("hh-mm-ss-SSSS");
+		String digit6TimeStamp = simpleDateFormat2.format(new Date());
+		System.out.println(digit6TimeStamp);
 }
 	
-	@AfterMethod
-	public void closeLast(ITestResult result) throws IOException {
-		String monthAndDate = CommonUtils.getMonthAndDate();
-		String digit6TimeStamp = CommonUtils.get6DigitTimeStamp();
-		
-		String failScreenShotName = result.getMethod().getMethodName() + monthAndDate + "_Failed_"
-				+ digit6TimeStamp;
-		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("../selenium-maven-java/Screenshot/" + failScreenShotName + ".png"));// result+result.getName()
-
-	}
 }
