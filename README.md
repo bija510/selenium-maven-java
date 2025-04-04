@@ -32,6 +32,7 @@
 
 #### Install Java
 >Download Java JDK: https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+- x64 Installer option to download the .exe
 ```
 1. Install next .... finished
 2. Setting JAVA_HOME:
@@ -42,6 +43,7 @@
 ```
 #### Install Apache Maven
 > Download Apache maven: https://maven.apache.org/download.cgi
+- Files >> Binary zip archive >> apache-maven-3.9.9-bin.zip
 ```
 1. Install next .... finished
 2. Setting MAVEN_HOME:
