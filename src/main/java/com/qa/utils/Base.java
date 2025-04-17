@@ -66,6 +66,7 @@ public class Base {
 	public void tearDown() throws InterruptedException {
 		if (driver != null) {
 			driver.quit();
+			System.out.println("Every associated window is Closed");
 		}
 	}
 }

@@ -27,7 +27,7 @@ public class Test28Exceptions extends Base {
 			Assert.fail("===Not Found===");
 		}
 	}
-
+	@Test
 	public void Test_NoAlertPresentException() {
 		try {
 			driver.get("https://the-internet.herokuapp.com/javascript_alerts");

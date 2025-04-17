@@ -2,12 +2,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Maven_Seleniums</groupId>
-	<artifactId>Maven_Seleniums</artifactId>
+	<groupId>selenium-maven-java</groupId>
+	<artifactId>selenium-maven-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<project.build.sourceEncodin>UTF-8</project.build.sourceEncodin>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.source>21</maven.compiler.source>
 		<aspectj.version>l.9.22.l</aspectj.version>
@@ -23,7 +23,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.29.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-api</artifactId>
@@ -47,13 +47,6 @@
 			<version>0.1.0</version>
 		</dependency>
 
-		<!-- https://github.com/adiralashiva8/testng-metrics -->
-		<dependency>
-			<groupId>com.github.adiralashiva8</groupId>
-			<artifactId>testng-metrics</artifactId>
-			<version>1.6</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
@@ -75,7 +68,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.11.0</version>
+			<version>7.10.2</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -140,22 +133,29 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>21</source>
+					<target>21</target>
 				</configuration>
 			</plugin>
-			<!--
+ 
+ <!-- Fixed Surefire plugin configuration -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.0</version>
+				<version>3.1.2</version>
 				<configuration>
 					<suiteXmlFiles>
+					 <!-- Specify the TestNG XML file path here -->
 						<suiteXmlFile>./Test Suites/${testngFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			-->
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+
 		</plugins>
 	</build>
 

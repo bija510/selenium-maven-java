@@ -25,26 +25,29 @@ public class PropertiesFileDataDrivenTest extends Base{
 	    FileInputStream fis = new FileInputStream("../selenium-maven-java/Configurations/Config.properties");
 	    prop.load(fis);
 	    String URL = prop.getProperty("url");
-	    String firstName =prop.getProperty("FirstName");
-	    String lastName = prop.getProperty("LastName");
+	    String userName =prop.getProperty("UserName");
+	    String password = prop.getProperty("Password");
 	   
 	    driver.get(URL);	
 	    
-	    WebElement firstNameTextBox = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
-		firstNameTextBox.sendKeys(firstName);
+	    WebElement userNameTextBox = driver.findElement(By.xpath("//input[@placeholder='Username']"));
+	    userNameTextBox.sendKeys(userName);
+	    
+	    Thread.sleep(2000);
 		
-		WebElement lastNameTextBox = driver.findElement(By.cssSelector("input[placeholder='Last Name'"));
-		lastNameTextBox.sendKeys(lastName); 
+		WebElement passwordTextBox = driver.findElement(By.xpath("//input[@placeholder='Password']"));
+		passwordTextBox.sendKeys(password); 
 		
 		/**************************************************************************
 		 * Writing String Key and Value to Properties File
 		 **************************************************************************/
 		prop.setProperty("Country", "USA");		
-		FileOutputStream fos = new FileOutputStream("../Maven_Seleniums/Configurations/Config.properties");
+		FileOutputStream fos = new FileOutputStream("../selenium-maven-java/Configurations/Config.properties");
 		prop.store(fos, "Write data to Properties File TimeStamp");		
 		fis.close();
 		
-		driver.close();
+		Thread.sleep(3000);
+		driver.quit();
 	    
 	}
 }

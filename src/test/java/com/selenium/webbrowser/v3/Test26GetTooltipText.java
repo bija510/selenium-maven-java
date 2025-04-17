@@ -15,7 +15,7 @@ public class Test26GetTooltipText extends Base {
 		driver.switchTo().frame(0);
 
 		WebElement agebox = driver.findElement(By.id("age"));
-		String tooltiptext = agebox.getAttribute("title");
+		String tooltiptext = agebox.getDomAttribute("title");
 		if (tooltiptext.equals("We ask for your age only for statistical purposes.")) {
 			System.out.println("Tooltip test passed");
 		}else{

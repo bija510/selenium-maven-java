@@ -12,7 +12,7 @@ import com.qa.utils.Base;
 public class RobotClassFileUploadTest extends Base {
 	
 		@Test
-		public void uploadFileRC() throws InterruptedException, AWTException {
+		public void test_uploadFileRC() throws InterruptedException, AWTException {
 			driver.get("https://pdf2jpg.net/");			
 	        String uploadFilePath = System.getProperty("user.dir")+"\\Include\\Upload file.pdf";
 	        

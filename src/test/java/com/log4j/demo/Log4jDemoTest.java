@@ -3,6 +3,7 @@ package com.log4j.demo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,10 +18,8 @@ public class Log4jDemoTest{
 	
 	@BeforeClass
 	public static void setUp() {
-		
-		WebDriverManager.firefoxdriver().setup();
 		logger.info("We are trying to open Firefox driver");	
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 		
 		logger.info("Firefox browser open successfully");
 		

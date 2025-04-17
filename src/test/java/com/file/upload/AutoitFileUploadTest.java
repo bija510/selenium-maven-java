@@ -28,7 +28,7 @@ public class AutoitFileUploadTest extends Base{
 	 5. It will create the autoit.exe file, which we run from the script
 	 */
 	@Test
-	public void autoItFileUpload() throws InterruptedException, IOException {
+	public void test_autoItFileUpload() throws InterruptedException, IOException {
 		driver.get("http://demo.automationtesting.in/FileUpload.html"); 
 		
 		WebElement fileUpload = driver.findElement(By.xpath("//div[@class='btn btn-primary btn-file']"));

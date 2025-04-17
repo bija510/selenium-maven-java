@@ -4,7 +4,7 @@
 
 	<test thread-count="5" name="Test">
 		<packages>
-			<package name="fileUpload"></package>
+			<package name="com.file.upload"></package>
 		</packages>
 	</test>
 
