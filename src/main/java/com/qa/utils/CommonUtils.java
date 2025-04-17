@@ -31,5 +31,11 @@ public class CommonUtils {
 		String digitTimeStamp = simpleDateFormat2.format(new Date());
 		return digitTimeStamp;
 	}
+	
+	public static String dateTimeStamp() {
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss--SSS");
+		String digitTimeStamp = simpleDateFormat2.format(new Date());
+		return digitTimeStamp;
+	}
 
 }
