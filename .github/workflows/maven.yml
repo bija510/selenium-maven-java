@@ -33,13 +33,13 @@ jobs:
 
     - name: Upload HTML Report
       if: always() # ensures report uploads even if tests fail
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: html-report
         path: target/surefire-reports/ # update with your actual HTML report path
     
     - name: Deploy TestNG Report to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./gh-pages-report
@@ -50,7 +50,7 @@ jobs:
           xcopy /E /I /Y target\surefire-reports deploy
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./deploy
