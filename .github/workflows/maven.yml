@@ -34,7 +34,7 @@ jobs:
     - name: Copy TestNG Report to Publish Directory
       run: |
         mkdir -p gh-pages-report
-        cp -r ./test-output/* ./gh-pages-report/
+        cp -r ./target/surefire-reports/index.html/* ./gh-pages-report/
  
     - name: Deploy TestNG Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
