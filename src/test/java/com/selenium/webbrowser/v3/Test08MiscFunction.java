@@ -1,5 +1,6 @@
 package com.selenium.webbrowser.v3;
 
+import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -19,7 +20,7 @@ public class Test08MiscFunction extends Base{
 		 **********************************************************************/
 			
 		driver.get("https://www.facebook.com/login/");
-		driver.manage().timeouts().pageLoadTimeout(9, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.manage().deleteAllCookies();
 		
 		System.out.println( "Current Url:- " + driver.getCurrentUrl() );
@@ -38,7 +39,7 @@ public class Test08MiscFunction extends Base{
 		int a = 1;
 		for(WebElement link : links) {
 			if(link.getText().length()>0) {
-				System.out.println(a++ + " "+ link.getText()+ "==>"+link.getAttribute("href"));
+				System.out.println(a++ + " "+ link.getText()+ "==>"+link.getDomAttribute("href"));
 			}
 		}
 		
