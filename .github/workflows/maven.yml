@@ -31,11 +31,16 @@ jobs:
       run:  |
         mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=ts-smoke.xml"
     
-    - name: Upload TestNG HTML Report
-      uses: actions/upload-artifact@v4
+    - name: Copy Report to Publish Directory
+      run: |
+        mkdir gh-pages-report
+        cp -r selenium-maven-java/test-output/* gh-pages-report/
+
+    - name: Deploy TestNG Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        name: testng-report
-        path: selenium-maven-java/test-output/
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./gh-pages-report
      
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
