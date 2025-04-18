@@ -31,11 +31,11 @@ jobs:
       run:  |
         mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=ts-smoke.xml"
     
-    - name: Copy Report to Publish Directory
+    - name: Copy TestNG Report to Publish Directory
       run: |
-        mkdir gh-pages-report
-        cp -r selenium-maven-java/test-output/* gh-pages-report/
-
+        mkdir -p gh-pages-report
+        cp -r ./test-output/* ./gh-pages-report/
+ 
     - name: Deploy TestNG Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
