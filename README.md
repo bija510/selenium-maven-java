@@ -132,7 +132,6 @@ Data
 Include
 ├── UploadFile.pdf, UploadFile.png, UploadFile.csv...
 ├── SelectorHub.crx (browser extension)
-├── AutoIt
 
 Logs
 ├── execution.logs
@@ -151,8 +150,9 @@ test-output(Testng Report)
 ├── index.html
 
 Test Suites
-├──TS_app_smoke.xml
-├──TS_app_Regression.xml
+├──ts-smoke.xml
+├──ts-sanity.xml
+├──ts-regression.xml
 
 README.md
 ```
@@ -414,4 +414,28 @@ This project is a structured Maven-based Selenium Java framework following a lay
 ```
 15. Parallel execution demo test case Test Suites/Parallel..*.
 
+## ▶️ Running the test suites
+```
+# 1.  Running the smoke test suite
+mvn clean test -DtestngFile=smoke-test-suite.xml
+
+# 2. Running the Sanity test suite
+mvn clean test -DtestngFile=sanity-test-suite.xml
+
+# 3. Running the Regression test suite
+mvn clean test -DtestngFile=regression-test-suite.xml
+
+```
+
+## 📊  Report
+1. Maven surefire report
+   target/surefire-reports/`index.html`
+
+2. TestNG Report
+   test-output/`index.html`
+
+3. Allure Report
+   install `scoop` window powershell : iwr -useb get.scoop.sh | iex
+   install `allure` command: scoop install allure
+   cmd command : `allure serve allure-results`
 
