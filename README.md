@@ -282,6 +282,13 @@ This project is a structured Maven-based Selenium Java framework following a lay
 | **Decorator Pattern**        | Enhances Selenium functions (like waits, screenshots)                | **Recommended:** Useful for extending WebDriver capabilities and adding reusable features like logging or screenshots. |
 
 ---
+### ❌ Why PageFactory (@FindBy) Is Deprecated
+- **Proxy issues**: Uses lazy proxies that can cause `StaleElementReferenceException` and are hard to debug.
+- **No built-in waits**: Leads to flaky tests due to `timing problems`.
+- **Maintenance**: Adds `complexity` and hides element lookup details.
+- **Better alternatives**: `Explicit By locators with WebDriverWait are clearer` and more reliable.
+- **Limited modern support**: `Doesn’t support Selenium 4` features well.
+- **Performance**: Proxy creation can `slow down large test suites`.
 
 ## 🔥 **Summary**
 ✅ Follows layered architecture for better maintainability  
