@@ -7,25 +7,24 @@ Selenium WebDriver is a tool that allows you to automate web browsers using code
 
 **Selenium WebDriver** is a programming interface developed by **Simon Stewart in 2006**.
 
-✅ **Cross-Platform Support**: Works on **Windows**, **Mac**, and **Linux**.
+- **Cross-Platform Support**: Works on **Windows**, **Mac**, and **Linux**.
+- **Cross-Browser Support**: Compatible with major browsers like **Chrome**, **Microsoft Edge**, **Firefox**, and **Safari**.
 
-✅ **Cross-Browser Support**: Compatible with major browsers like **Chrome**, **Microsoft Edge**, **Firefox**, and **Safari**.
+- **Multi-Language Support**: Works with top programming languages including **Java**, **JavaScript**, **Python**, **C#**, and **Ruby**.
 
-🆓 **Multi-Language Support**: Works with top programming languages including **Java**, **JavaScript**, **Python**, **C#**, and **Ruby**.
+- Use **Eclipse IDE** to develop and manage test cases.
 
-🆓 Use **Eclipse IDE** to develop and manage test cases.
+- Integrates with **Jenkins** for **CI/CD** pipeline automation.
 
-🆓 Integrates with **Jenkins** for **CI/CD** pipeline automation.
+- Supports **Maven** for build and dependency management.
 
-🆓 Supports **Maven** for build and dependency management.
+- Use **Git** (version control) and **GitHub** (cloud-based repository hosting) for collaboration.
 
-🆓 Use **Git** (version control) and **GitHub** (cloud-based repository hosting) for collaboration.
+- Supports **TestNG** as a testing framework.
 
-🆓 Supports **TestNG** as a testing framework.
+- Huge ecosystem of plugins – offering flexibility and enhanced capabilities.
 
-🆓 Huge ecosystem of plugins – offering flexibility and enhanced capabilities.
-
-🆓 Generates HTML test reports using **Maven**, **TestNG**, **Extent Reports**, and **Allure Reports**.
+- Generates HTML test reports using **Maven**, **TestNG**, **Extent Reports**, and **Allure Reports**.
 
 ***
 
@@ -33,77 +32,76 @@ Selenium WebDriver is a tool that allows you to automate web browsers using code
 
 ## 📥 Download, Install and Setup.
 #### Eclipse IDE Download 
->https://www.eclipse.org/downloads/packages/
+- https://www.eclipse.org/downloads/packages/
+
 #### Install TestNG in Eclipse  
->Help >> Eclipse Market place >> search >> testng >> Install.
+- Help >> Eclipse Market place >> search >> testng >> Install.
 
-#### Install Java
->Download Java JDK: https://www.oracle.com/java/technologies/downloads/#jdk21-windows
-- x64 Installer option to download the .exe
-```
-1. Install next .... finished
-2. Setting JAVA_HOME:
-3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
-4. System Variable >> new >> Variable name = JAVA_HOME & Variable value = C:\Program Files\Java\jdk-21 >> OK
-5. System variable >> path >> edit >> new >>  C:\Program Files\Java\jdk-21\bin >> OK
-6. Command Prompt : java --version >> will display Java Version.
-```
+#### Install Java JDK
+1. Download the **x64 Installer (.exe)** from [Oracle JDK Downloads](https://www.oracle.com/java/technologies/downloads/#jdk21-windows).
+2. Run the installer and complete the setup.
+3. Set environment variables:
+	- Open This **PC > Properties > Advanced system settings > Environment Variables.**
+	- Under System variables, create a new variable:
+	  `JAVA_HOME = C:\Program Files\Java\jdk-21`
+	- Edit the Path variable and add:
+	 `C:\Program Files\Java\jdk-21\bin`
+4. Verify installation by running in Command Prompt: `java --version`
+
 #### Install Apache Maven
-> Download Apache maven: https://maven.apache.org/download.cgi
-- Files >> Binary zip archive >> apache-maven-3.9.9-bin.zip
-```
-1. Install next .... finished
-2. Setting MAVEN_HOME:
-3. R-click on "This PC" and select "Properties" >> Advanced system settings >> Environment Variables.
-4. User Variable >> new >> Variable name = MAVEN_HOME & Variable value = C:\Program Files\apache-maven-3.9.9 >> OK
-5. System variable >> path >> edit >> new >>  C:\Program Files\apache-maven-3.9.9\bin
-6. Command Prompt : mvn -v >> will display Maven Version.
+1. Download the **Binary zip archive** (`apache-maven-3.9.9-bin.zip`) from [Apache Maven Downloads](https://maven.apache.org/download.cgi).
+2. Extract the zip file to a desired location, e.g., `C:\Program Files\apache-maven-3.9.9`.
+3. Set environment variables:  
+   - Right-click **This PC** → **Properties** → **Advanced system settings** → **Environment Variables**.  
+   - Under **User variables**, create a new variable:  
+     `MAVEN_HOME = C:\Program Files\apache-maven-3.9.9`  
+   - Edit the **Path** variable under **System variables** and add:  
+     `C:\Program Files\apache-maven-3.9.9\bin`
+4. Verify installation by running in Command Prompt:  
 
-```
 #### For the pom.xml dependencies
-> https://mvnrepository.com/
+- https://mvnrepository.com/
 
 ## 📘 Naming conventions for Selenium identifiers
-```
-+----------+----------------------------+--------+-----------------+
-| Category |      UI/Control type       | Prefix |     Example     |
-+----------+----------------------------+--------+-----------------+
-| Basic    | Button                     | btn    | btnExit         |
-| Basic    | Text box                   | txt    | txtLastName     |
-| Basic    | Check box                  | chk    | chkReadOnly     |
-| Basic    | Radio button / group       | rad    | radGender       |
-| Basic    | Label                      | lbl    | lblHelpMessage  |
-| Basic    | Date picker                | dtp    | dtpPublished    |
-| Basic    | Links/Anchor Tags          | lnk    | lnkForgotPwd    |
-| Basic    | Combo box                  | cbo    | cboEnglish      |
-| Basic    | Menu                       | mnu    | mnuFileOpen     |
-| Basic    | Sub Menu                   | sbmnu  | mnuFileOpen     |
-| Basic    | Dropdown List / Select tag | ddl    | ddlCountry      |
-| Basic    | Table                      | tbl    | tblCustomer     |
-| Basic    | Form                       | frm    | frmEntry        |
-| Basic    | Frame                      | fra    | fraLanguage     |
-| Basic    | Image                      | img    | imgIcon         |
-| Basic    | Common dialog              | dlg    | dlgFileOpen     |
-| Basic    | List box                   | lst    | lstPolicyCodes  |
-| Basic    | RichTextBox                | rtf    | rtfReport       |
-| Basic    | TabStrip                   | tab    | tabOptions      |
-| Basic    | Text Area                  | txa    | txaDescription  |
-| Complex  | Spinner                    | spn    | spnPages        |
-| Complex  | Chevron                    | chv    | chvProtocol     |
-| Complex  | Data grid                  | dgd    | dgdTitles       |
-| Complex  | Data list                  | dbl    | dblPublisher    |
-| Complex  | Directory list box         | dir    | dirSource       |
-| Complex  | Drive list box             | drv    | drvTarget       |
-| Complex  | File list box              | fil    | filSource       |
-| Complex  | Panel/Fieldset             | pnl    | pnlGroup        |
-| Complex  | ProgressBar                | prg    | prgLoadFile     |
-| Complex  | Slider                     | sld    | sldScale        |
-| Complex  | StatusBar                  | sta    | staDateTime     |
-| Complex  | Timer                      | tmr    | tmrAlarm        |
-| Complex  | Toolbar                    | tlb    | tlbActions      |
-| Complex  | TreeView                   | tre    | treOrganization |
-+----------+----------------------------+--------+-----------------+
-```
+
+| Category | UI/Control type           | Prefix | Example        |
+|----------|---------------------------|--------|----------------|
+| Basic    | Button                    | btn    | btnExit        |
+| Basic    | Text box                  | txt    | txtLastName    |
+| Basic    | Check box                 | chk    | chkReadOnly    |
+| Basic    | Radio button / group      | rad    | radGender      |
+| Basic    | Label                     | lbl    | lblHelpMessage |
+| Basic    | Date picker               | dtp    | dtpPublished   |
+| Basic    | Links/Anchor Tags         | lnk    | lnkForgotPwd   |
+| Basic    | Combo box                 | cbo    | cboEnglish     |
+| Basic    | Menu                      | mnu    | mnuFileOpen    |
+| Basic    | Sub Menu                  | sbmnu  | mnuFileOpen    |
+| Basic    | Dropdown List / Select tag| ddl    | ddlCountry     |
+| Basic    | Table                     | tbl    | tblCustomer    |
+| Basic    | Form                      | frm    | frmEntry       |
+| Basic    | Frame                     | fra    | fraLanguage    |
+| Basic    | Image                     | img    | imgIcon        |
+| Basic    | Common dialog             | dlg    | dlgFileOpen    |
+| Basic    | List box                  | lst    | lstPolicyCodes |
+| Basic    | RichTextBox               | rtf    | rtfReport      |
+| Basic    | TabStrip                  | tab    | tabOptions     |
+| Basic    | Text Area                 | txa    | txaDescription |
+| Complex  | Spinner                   | spn    | spnPages       |
+| Complex  | Chevron                   | chv    | chvProtocol    |
+| Complex  | Data grid                 | dgd    | dgdTitles      |
+| Complex  | Data list                 | dbl    | dblPublisher   |
+| Complex  | Directory list box        | dir    | dirSource      |
+| Complex  | Drive list box            | drv    | drvTarget      |
+| Complex  | File list box             | fil    | filSource      |
+| Complex  | Panel/Fieldset            | pnl    | pnlGroup       |
+| Complex  | ProgressBar               | prg    | prgLoadFile    |
+| Complex  | Slider                    | sld    | sldScale       |
+| Complex  | StatusBar                 | sta    | staDateTime    |
+| Complex  | Timer                     | tmr    | tmrAlarm       |
+| Complex  | Toolbar                   | tlb    | tlbActions     |
+| Complex  | TreeView                  | tre    | treOrganization|
+
+
 # 🗂️ Folder Structure
 ```
 src/main/java
@@ -153,9 +151,9 @@ Test Suites
 ├──ts-smoke.xml
 ├──ts-sanity.xml
 ├──ts-regression.xml
-
-README.md
 ```
+README.md
+
 
 # 📐 Selenium Java Framework Architecture Overview
 
@@ -177,17 +175,6 @@ This project is a structured Maven-based Selenium Java framework following a lay
 | `PdfReader.java` | Handles PDF file reading and verification |
 | `log4j2.xml` | Log configuration file for logging using Log4j |
 
----
-
-### 🔹 **src/test/java** – Contains test cases and Page Object classes
-| Directory/File | Description |
-|---------------|-------------|
-| **tests** | Stores actual test cases |
-| `LoginTest.java` | Test class for login functionality |
-| **pages** | Stores Page Object classes |
-| `LoginPage.java` | Page class using Page Object Model (POM) for login |
-
----
 
 ### 🔹 **Configurations** – Contains framework configuration files
 | File | Description |
@@ -284,14 +271,15 @@ This project is a structured Maven-based Selenium Java framework following a lay
 
 ---
 
-## 🔤  3. Design Patterns Used
-| Pattern | Description |
-|---------|-------------|
-| **Page Object Model (POM)** | Separates UI element locators and actions from test cases |
-| **Singleton Pattern** | Ensures a single instance of WebDriver |
-| **Data-Driven Testing** | Fetches test data from JSON, Excel, or CSV files |
-| **Factory Pattern** | Creates objects for WebDriver initialization |
-| **Decorator Pattern** | Enhances Selenium functions (like waits, screenshots) |
+## 🔤 3. Design Patterns Used
+
+| Pattern                     | Description                                                                                      | Recommendation & Notes                                                               |
+|-----------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------  |
+| **✔️ Page Object Model (POM)** | Separates UI element locators and actions from test cases             | **👍 Best practice:** Keeps tests clean, maintainable, and reusable. Highly recommended for all Selenium projects. |
+| **Singleton Pattern**        | Ensures a single instance of WebDriver                               | **Recommended:** Helps manage WebDriver lifecycle consistently and avoids resource conflicts.                   |
+| **Data-Driven Testing**      | Fetches test data from JSON, Excel, or CSV files                     | **Best practice:** Enables running tests with multiple data sets, improves test coverage and flexibility.       |
+| **❌ Page Factory Pattern (@FindBy)** | Uses annotations to initialize WebElement objects for locators | **Not recommended / Deprecated:** Still works but deprecated in Selenium 4+. Can cause proxy/stale element issues. Explicit locators with WebDriver are preferred. |
+| **Decorator Pattern**        | Enhances Selenium functions (like waits, screenshots)                | **Recommended:** Useful for extending WebDriver capabilities and adding reusable features like logging or screenshots. |
 
 ---
 
@@ -302,130 +290,69 @@ This project is a structured Maven-based Selenium Java framework following a lay
 ✅ Provides logging and reporting with Log4j and Extent Reports  
 ✅ Enables parallel and cross-browser testing using TestNG and Maven  
 
+## Demo Project Overview
+This project demonstrates Selenium WebDriver features from version 3 up to 4.29, including:
+
+1. Basic Selenium WebDriver actions  
+2. PDF file reading using Apache PDFBox  
+3. Comprehensive TestNG framework test cases  
+4. Core Java fundamentals  
+5. ChromeOptions and Chrome DevTools usage  
+6. Mobile emulator testing on Chrome browser  
+7. Data-driven testing with JSON, Excel, Properties files, and MySQL database  
+8. File upload automation with Robot class and AutoIT  
+9. Headless browser testing using HtmlUnit, ChromeDriver, FirefoxDriver, and PhantomJS  
+10. Logging with Log4j framework  
+11. Page Object Model design pattern demos: traditional POM and Page Factory with `@FindBy` annotation  
+12. Singleton design pattern example  
+13. Shadow DOM handling  
+14. Broken links detection  
+15. Use of relative/friendly locators  
+
+### Key Dependencies
+
+- **Apache PDFBox** for PDF handling  
+- **Log4j** for logging  
+- **Automation library** for friendly locators  
+
+## 🚀 How to Execute Tests
+
+1. Clone the repository.
+2. Configure `Config.properties` with browser, URL, and timeout.
+3. Run tests using:
+```bash
+mvn clean test
+```
+4. View reports at:
+- `target/surefire-reports/index.html`
+- `reports/extendReport.html`
+- Allure report via:
+```bash
+allure serve allure-results
+```
+
 ---
 
-### 🚀 **How to Execute**
-1. Clone the repository.  
-2. Configure `Config.properties` with the correct browser, URL, and timeout.  
-3. Use `mvn clean test` to execute test cases.  
-4. View reports in `target/surefire-reports/index.html` or `reports/extendReport.html` or `allure-results using command -- [allure serve allure-results]`.
+## ▶️ Running Specific Test Suites
 
----
-
-### 👨‍💻 **Author**
-[Bijaya Chhetri] – Automation Engineer  
-
----
-
-
-## This Demo Project cover Selenium Webdriver 3 and upto Selenium webdriver version 4.29
-1. Basic selenium webdriver actions.
-2. Read PDF Files using pdfbox 
+Run a suite with:
+```bash
+mvn clean test -DtestngFile=YourTestSuite.xml
 ```
-    <dependency>
-		<groupId>org.apache.pdfbox</groupId>
-		<artifactId>pdfbox</artifactId>
-		<version>2.0.21</version>
-    </dependency> 
-```
-3. TestNG framework demo test case which cover all the aspect of the testNG.
-4. Core java basic course.
-5. ChromeOptions class methods demo Test cases.
-6. ChromeDevTools demo Test cases.
-7. Chrome Browser mobile emulator testing.
-8. Datadriven Testing using
-    * JSON File
-    * Excel File
-    * Properties File
-    * Mysql Database
-9. File Upload demo test case using:
-    * Robert class &
-    * AutoIT
-10. Headless WebBrowser testing using:-
-    * HtmlUnit Driver
-    * ChromeDriver & FireFox
-    * PhantomJsDriver
-11. Log4j (Logging framework) Demo test cases.
-```
-    <dependency>
-		<groupId>org.apache.logging.log4j</groupId>
-		<artifactId>log4j-api</artifactId>
-		<version>2.11.1</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.logging.log4j</groupId>
-		<artifactId>log4j-core</artifactId>
-		<version>2.11.1</version>
-	</dependency>
-```
-12. Demo test case for page object model Design pattern in 2 different ways. 
-    
-    * Page factory design pattern with _@FindBy_ annoatation.
-    * page object model
-13. Singleton Test case Design Pattern demo.
-14. Demo test case to Handle **Shadow Dom**.
-15. Find Broken Links Using Selenium WebDriver
-16. Relative or friendly locator.
-
-```
-    <dependency>
-		<groupId>io.github.sukgu</groupId>
-		<artifactId>automation</artifactId>
-		<version>0.1.0</version>
-    </dependency>
-```
-
-
-## ▶️ How to run test suite
-
-```
-1. Open terminal go to project path & run this command:
-	A. command is = mvn clean test -DtestngFile=RunPackages.xml
-	B. Make sure you have this inside the pom.xml file
-	C. If the testsuite.xml file are in root directory the Just this is fine = ${testngFile}
-	D. And in the pom.xml for test change 
-	<scope>test</scope> to <scope>compile</scope> so that it will run from CMD.
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.0</version>
-            <configuration>
-               <suiteXmlFiles>
-               <suiteXmlFile>./Test Suites/${testngFile}</suiteXmlFile>
-               </suiteXmlFiles>
-            </configuration>
-        </plugin>
-		</plugins>
-	</build>
-
-```
-15. Parallel execution demo test case Test Suites/Parallel..*.
-
-## ▶️ Running the test suites
-```
-# 1.  Running the smoke test suite
+Examples:
+```bash
 mvn clean test -DtestngFile=smoke-test-suite.xml
-
-# 2. Running the Sanity test suite
 mvn clean test -DtestngFile=sanity-test-suite.xml
-
-# 3. Running the Regression test suite
 mvn clean test -DtestngFile=regression-test-suite.xml
-
 ```
+- Adjust `<suiteXmlFile>` path if suite files are not in `Test Suites`.
+- Change dependency scope from `<scope>test</scope>` to `<scope>compile</scope>` to run from command line.
+
+---
+
+## ▶️ Parallel Execution Demo
+- Parallel suite located in `Test Suites/Parallel...`
+
 
 ## 📊  Report
 1. Maven surefire report
@@ -439,9 +366,8 @@ mvn clean test -DtestngFile=regression-test-suite.xml
    install `allure` command: scoop install allure
    cmd command : `allure serve allure-results`
 
-## 👥 Author
-Bijay Chhetri
-🔗 github.com/bija510
+## 👨‍💻 **Author**
+Bijaya Chhetri  | Automation Engineer  | 🔗 github.com/bija510
 
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE).
