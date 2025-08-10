@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-10T02:36:27 UTC" name="Suite" finished-at="2025-08-10T02:37:20 UTC" duration-ms="52643">
+    <groups>
+    </groups>
+    <test started-at="2025-08-10T02:36:27 UTC" name="Test" finished-at="2025-08-10T02:37:20 UTC" duration-ms="52643">
+      <class name="com.selenium.webbrowser.v3.Test08MiscFunction">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:27 UTC" name="initialize" finished-at="2025-08-10T02:36:41 UTC" duration-ms="13627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="GetTotalLinksAndName()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:41 UTC" name="GetTotalLinksAndName" finished-at="2025-08-10T02:36:46 UTC" duration-ms="4662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTotalLinksAndName -->
+        <test-method is-config="true" signature="closeLast(org.testng.ITestResult)[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:46 UTC" name="closeLast" finished-at="2025-08-10T02:36:46 UTC" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetTotalLinksAndName status=SUCCESS method=Test08MiscFunction.GetTotalLinksAndName()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeLast -->
+        <test-method signature="miscFunct()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:46 UTC" name="miscFunct" finished-at="2025-08-10T02:36:46 UTC" duration-ms="451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- miscFunct -->
+        <test-method is-config="true" signature="closeLast(org.testng.ITestResult)[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:46 UTC" name="closeLast" finished-at="2025-08-10T02:36:46 UTC" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=miscFunct status=SUCCESS method=Test08MiscFunction.miscFunct()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeLast -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.selenium.webbrowser.v3.Test08MiscFunction@795509d9]" started-at="2025-08-10T02:36:46 UTC" name="tearDown" finished-at="2025-08-10T02:36:47 UTC" duration-ms="348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.selenium.webbrowser.v3.Test08MiscFunction -->
+      <class name="com.selenium.webbrowser.v3.Test07CheckBxRadioBtn">
+        <test-method signature="CheckBxAndRadioBtn()[pri:0, instance:com.selenium.webbrowser.v3.Test07CheckBxRadioBtn@d737b89]" started-at="2025-08-10T02:36:47 UTC" name="CheckBxAndRadioBtn" finished-at="2025-08-10T02:37:20 UTC" duration-ms="33446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckBxAndRadioBtn -->
+      </class> <!-- com.selenium.webbrowser.v3.Test07CheckBxRadioBtn -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
