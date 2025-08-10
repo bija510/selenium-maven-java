@@ -439,3 +439,9 @@ mvn clean test -DtestngFile=regression-test-suite.xml
    install `allure` command: scoop install allure
    cmd command : `allure serve allure-results`
 
+## 👥 Author
+Bijay Chhetri
+🔗 github.com/bija510
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
