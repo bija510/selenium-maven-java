@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Test09Waits {
 
 	@Test
-	public void TestMethod01() {
+	public void waitsDemo() {
 		/**********************************************************************
 		 * Please refer to this Official selenium Documentation
 		 * https://www.selenium.dev/selenium/docs/api/java/deprecated-list.html
@@ -28,7 +28,7 @@ public class Test09Waits {
 		WebDriverWait ExplicitWait = new WebDriverWait(driver,Duration.ofSeconds(20));// Selenium-4
 		
 //		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
 		
 		driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 		

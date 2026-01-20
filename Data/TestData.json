@@ -3,4 +3,5 @@
 	"userName" : "Admin" ,
 	"password" : "admin123" ,
 	"email" : "Test@gmail.com" 
+	"firstName" : "Test"
 }
