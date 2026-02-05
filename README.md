@@ -63,43 +63,19 @@ Selenium WebDriver is a tool that allows you to automate web browsers using code
 - https://mvnrepository.com/
 
 ## 📘 Naming conventions for Selenium identifiers
-
-| Category | UI/Control type           | Prefix | Example        |
-|----------|---------------------------|--------|----------------|
-| Basic    | Button                    | btn    | btnExit        |
-| Basic    | Text box                  | txt    | txtLastName    |
-| Basic    | Check box                 | chk    | chkReadOnly    |
-| Basic    | Radio button / group      | rad    | radGender      |
-| Basic    | Label                     | lbl    | lblHelpMessage |
-| Basic    | Date picker               | dtp    | dtpPublished   |
-| Basic    | Links/Anchor Tags         | lnk    | lnkForgotPwd   |
-| Basic    | Combo box                 | cbo    | cboEnglish     |
-| Basic    | Menu                      | mnu    | mnuFileOpen    |
-| Basic    | Sub Menu                  | sbmnu  | mnuFileOpen    |
-| Basic    | Dropdown List / Select tag| ddl    | ddlCountry     |
-| Basic    | Table                     | tbl    | tblCustomer    |
-| Basic    | Form                      | frm    | frmEntry       |
-| Basic    | Frame                     | fra    | fraLanguage    |
-| Basic    | Image                     | img    | imgIcon        |
-| Basic    | Common dialog             | dlg    | dlgFileOpen    |
-| Basic    | List box                  | lst    | lstPolicyCodes |
-| Basic    | RichTextBox               | rtf    | rtfReport      |
-| Basic    | TabStrip                  | tab    | tabOptions     |
-| Basic    | Text Area                 | txa    | txaDescription |
-| Complex  | Spinner                   | spn    | spnPages       |
-| Complex  | Chevron                   | chv    | chvProtocol    |
-| Complex  | Data grid                 | dgd    | dgdTitles      |
-| Complex  | Data list                 | dbl    | dblPublisher   |
-| Complex  | Directory list box        | dir    | dirSource      |
-| Complex  | Drive list box            | drv    | drvTarget      |
-| Complex  | File list box             | fil    | filSource      |
-| Complex  | Panel/Fieldset            | pnl    | pnlGroup       |
-| Complex  | ProgressBar               | prg    | prgLoadFile    |
-| Complex  | Slider                    | sld    | sldScale       |
-| Complex  | StatusBar                 | sta    | staDateTime    |
-| Complex  | Timer                     | tmr    | tmrAlarm       |
-| Complex  | Toolbar                   | tlb    | tlbActions     |
-| Complex  | TreeView                  | tre    | treOrganization|
+| UI Control Type | Example Naming | UI Control Type | Example Naming |
+|-----------------|----------------|-----------------|----------------|
+| Button | btnSubmit | Form | frmLogin |
+| Text Box / Input | txtUsername | Image / Icon | imgLogo |
+| Check Box | chkRememberMe | Dialog / Modal | dlgConfirm |
+| Radio Button | radGender | List / Listbox | lstItems |
+| Label / Text | lblMessage | Text Area | txaComments |
+| Date Picker | dtpStartDate | Panel / Section | pnlProfile |
+| Link / Anchor | lnkForgotPassword | Data Grid | grdResults |
+| Dropdown / Select | ddlCountry | Tabs | tabDashboard |
+| Combo Box | cboSearch | Slider | sldVolume |
+| Menu / Navigation | mnuSettings | Tree View | treCategory |
+| Table | tblUsers |  |  |
 
 
 # 🗂️ Folder Structure
