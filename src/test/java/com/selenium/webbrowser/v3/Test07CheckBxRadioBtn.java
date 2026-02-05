@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import com.qa.utils.CommonUtils;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Test07CheckBxRadioBtn {
@@ -18,6 +20,8 @@ public class Test07CheckBxRadioBtn {
 
 		driver.get("http://demo.automationtesting.in/Register.html");
 
+		CommonUtils.vScroll(driver, 300);
+		
 		WebElement movieChkBx = driver.findElement(By.xpath("//input[@id='checkbox1']"));
 		if (!movieChkBx.isSelected()) {
 			movieChkBx.click();

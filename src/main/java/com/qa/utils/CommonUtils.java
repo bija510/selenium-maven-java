@@ -3,6 +3,10 @@ package com.qa.utils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 /**
  * This class provides globally reusable methods.
  */
@@ -36,6 +40,11 @@ public class CommonUtils {
 		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss--SSS");
 		String digitTimeStamp = simpleDateFormat2.format(new Date());
 		return digitTimeStamp;
+	}
+	
+	public static void vScroll(WebDriver driver, int num) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0," + num + ")");
 	}
 
 }

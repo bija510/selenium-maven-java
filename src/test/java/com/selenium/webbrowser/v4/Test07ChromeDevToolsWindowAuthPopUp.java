@@ -6,8 +6,6 @@ import java.util.Optional;
 import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v85.network.Network;
-import org.openqa.selenium.devtools.v85.network.model.Headers;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
@@ -46,14 +44,14 @@ If there is username with @ then this will not work.
 
 		DevTools devTools = ((EdgeDriver) driver).getDevTools();
 		devTools.createSession();
-		devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+		devTools.send(org.openqa.selenium.devtools.v144.network.Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), java.util.Optional.empty(), java.util.Optional.empty()));
 
 		// send auth header
 		Map<String, Object> headers = new HashMap<>();
 		String basicAuth = "Basic "+ new String(new Base64().encode(String.format("%s:%s", username, password).getBytes()));
 		headers.put("Authorization", basicAuth);
 
-		devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
+		devTools.send(org.openqa.selenium.devtools.v144.network.Network.setExtraHTTPHeaders(new org.openqa.selenium.devtools.v144.network.model.Headers(headers)));
 		driver.get("http://the-internet.herokuapp.com/basic_auth");
 
 		System.exit(0);

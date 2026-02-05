@@ -1,5 +1,6 @@
 package com.pom.singleton.design;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -44,7 +45,7 @@ public class TestBase {
 	}
 		driver.manage().window().maximize();
 		driver.get(Constants.url);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			
 	}
 	public static void quit() {
