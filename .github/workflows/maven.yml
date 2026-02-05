@@ -21,41 +21,32 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Run Maven Tests
-      run:  |
-        mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=ts-smoke.xml"
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
-    - name: Prepare deployment folder
+    - name: Run Maven Tests
+      run: |
+        mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=ts-smoke.xml" -Dsurefire.skipAfterFailureCount=0
+
+    - name: Prepare deploy folder
       if: always()
+      shell: powershell
       run: |
         mkdir deploy
-        # Copy all report files to deploy folder
-        cp -r Reports/* deploy/
+        xcopy /E /I /Y Reports deploy
 
     - name: Rename latest report to index.html
       if: always()
       shell: powershell
       run: |
         cd deploy
-        $latest_report = Get-ChildItem -Path . -Filter "extentReport-*.html" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-        Write-Host "Latest report: $($latest_report.Name)"
-        Copy-Item -Path $latest_report.FullName -Destination "index.html" -Force
-        
-    - name: Upload Extent HTML Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: html-report
-        path: Reports/ # make sure this matches your Extent report output folder
+        $latest = Get-ChildItem -Filter "extentReport-*.html" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        Copy-Item $latest.FullName -Destination "index.html" -Force
 
     - name: Deploy to GitHub Pages
       if: always()
@@ -63,4 +54,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./deploy
-        publish_branch: gh-pages # Default branch for Pages
+        publish_branch: gh-pages
