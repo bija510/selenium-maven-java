@@ -7,9 +7,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.qa.utils.Base;
+
+@Listeners(com.testng.demo.Test09listener.class)
 
 public class Test08MiscFunction extends Base{
 

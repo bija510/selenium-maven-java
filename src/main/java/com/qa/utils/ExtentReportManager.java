@@ -24,7 +24,7 @@ public class ExtentReportManager implements ITestListener {
     public ExtentTest test; //creating test case entries in the report& update status of the test methods.
  
     public void onStart(ITestContext context) {
-    	sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/reports/extentReport-Std-"+CommonUtils.dateTimeStamp()+".html");
+    	sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/Reports/extentReport-Std-"+CommonUtils.dateTimeStamp()+".html");
      	
     	sparkReporter.config().setDocumentTitle("Automation Report");
     	sparkReporter.config().setReportName("Functional Testing");

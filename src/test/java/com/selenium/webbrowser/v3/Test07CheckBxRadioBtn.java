@@ -4,11 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.qa.utils.CommonUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+@Listeners(com.testng.demo.Test09listener.class)
 
 public class Test07CheckBxRadioBtn {
 	WebDriver driver;
