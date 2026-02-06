@@ -2,6 +2,13 @@
 ## 👋 **Introduction & Why selenium?**
 Selenium WebDriver is a tool that allows you to automate web browsers using code, making it easier to test web applications and perform repetitive tasks. It supports multiple programming languages like Java, Python, and JavaScript, and works across various browsers such as Chrome, Firefox, and Edge. You can learn more and get started at selenium.dev.
 
+## Test Report
+![Report Overview](docs/screenshots/report-overview.png)
+
+![Report Details](docs/screenshots/report-details.png)
+
+[Click here to view full report](https://bija510.github.io/selenium-maven-java/#)
+
 ### ✨ Key Features:
 ***
 
