@@ -30,11 +30,12 @@ jobs:
         cache: maven
 
     - name: Run Maven Tests
+      shell: pwsh
       run: |
         mvn clean verify `
-        -Dtestng.dtd.http=true `
-        -DtestngFile=ts-smoke.xml `
-        -Dsurefire.skipAfterFailureCount=0
+            -Dtestng.dtd.http=true `
+            -DtestngFile=ts-smoke.xml `
+            -Dsurefire.skipAfterFailureCount=0
 
     - name: Prepare deploy folder
       if: always()
