@@ -31,11 +31,7 @@ jobs:
 
     - name: Run Maven Tests
       shell: pwsh
-      run: |
-        mvn clean verify `
-            -Dtestng.dtd.http=true `
-            -DtestngFile=ts-smoke.xml `
-            -Dsurefire.skipAfterFailureCount=0
+      run: mvn clean verify "-Dtestng.dtd.http=true" "-DtestngFile=ts-smoke.xml" "-Dsurefire.skipAfterFailureCount=0"
 
     - name: Prepare deploy folder
       if: always()
