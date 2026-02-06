@@ -1,4 +1,4 @@
-*.png
+/Screenshot/
 /target/
 /test-output/*
 debug.log*
