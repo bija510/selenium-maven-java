@@ -18,7 +18,7 @@ public class Test06DropDown extends Base {
 	 **********************************************************************************/
 
 	@Test
-	public void test_staticDDL() throws InterruptedException {
+	public void staticDropdown() throws InterruptedException {
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		WebElement DDL = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
 		Select selectDDL = new Select(DDL);
@@ -37,7 +37,7 @@ public class Test06DropDown extends Base {
 	}
 
 	@Test
-	public void test_dynamicDDL() throws InterruptedException {
+	public void dynamicDropdown() throws InterruptedException {
 		
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		driver.findElement(By.xpath("//input[@id='autocomplete']")).sendKeys("ind");

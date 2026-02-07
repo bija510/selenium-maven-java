@@ -17,7 +17,7 @@ import com.qa.utils.Base;
 public class Test08MiscFunction extends Base{
 
 	@Test
-	public void miscFunct() throws InterruptedException {
+	public void verifyUrlAndTitle() throws InterruptedException {
 		/**********************************************************************
 		 * From here no more Writing ChromeDriver setUp instead extends to Base 
 		 **********************************************************************/
@@ -35,7 +35,7 @@ public class Test08MiscFunction extends Base{
 	}
 	
 	@Test
-	public void GetTotalLinksAndName() {
+	public void verifyLinksOnCurrentPage() {
 		driver.get("https://www.facebook.com/");
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		System.out.println("==>"+links.size());

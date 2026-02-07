@@ -14,7 +14,7 @@ public class SampleMobileDemoTest {
 
 	@Test
 	public void test_iphonex_mode() throws InterruptedException {
-		WebDriver driver = new ChromeDriver(new MobileUtils().CapInjector("iPhone X"));
+		WebDriver driver = new ChromeDriver(new MobileUtils().capInjector("iPhone X"));
 		driver.manage().window().maximize();
 
 		String uAgent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;"); // navigator.appVersion
@@ -30,7 +30,7 @@ public class SampleMobileDemoTest {
 
 	@Test
 	public void test_pixel7() throws InterruptedException {
-		WebDriver driver = new ChromeDriver(new MobileUtils().CapInjector("Pixel 7"));
+		WebDriver driver = new ChromeDriver(new MobileUtils().capInjector("Pixel 7"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		// Verify desired device open in Browser

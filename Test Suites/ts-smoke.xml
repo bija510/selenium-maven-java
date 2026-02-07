@@ -8,9 +8,9 @@
 	
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.selenium.webbrowser.v3.Test08MiscFunction"/>
-      <class name="com.selenium.webbrowser.v3.Test07CheckBxRadioBtn"/>
-      <class name="com.selenium.webbrowser.v3.Test09Asserts"/>
+      <class name="com.testng.demo.AutoCompleteInputTest"/>
+      <class name="com.testng.demo.DropdownSelectionTest"/>
+      <class name="com.testng.demo.HomePageNavigationTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

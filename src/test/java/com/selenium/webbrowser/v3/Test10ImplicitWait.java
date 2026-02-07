@@ -8,7 +8,7 @@ import com.qa.utils.Base;
 public class Test10ImplicitWait extends Base{
 
 	@Test
-	public void ImpliWait() throws InterruptedException {
+	public void implicitWait() throws InterruptedException {
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //used only if needed-->soft wait	
 		driver.get("http://demo.automationtesting.in/Register.html");

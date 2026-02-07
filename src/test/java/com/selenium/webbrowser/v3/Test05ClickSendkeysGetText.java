@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class Test05ClickSendkeysGetText {
 
 	@Test
-	public void methodDemo() throws InterruptedException {
+	public void basicActions() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		

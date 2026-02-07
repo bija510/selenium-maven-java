@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MobileUtils {
 
-	public ChromeOptions CapInjector(String deviceName) {
+	public ChromeOptions capInjector(String deviceName) {
 		// Setting up device = iPhone X
 		Map<String, String> mobileEmulation = new HashMap<>();
 		mobileEmulation.put("deviceName", deviceName);// Nexus 5 //Galaxy S5

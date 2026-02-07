@@ -9,15 +9,13 @@ import org.testng.annotations.Test;
 
 import com.qa.utils.CommonUtils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 @Listeners(com.testng.demo.Test09listener.class)
 
 public class Test07CheckBxRadioBtn {
 	WebDriver driver;
 
 	@Test
-	public void CheckBxAndRadioBtn() throws InterruptedException {
+	public void verifyCheckBxAndRadioBtn() throws InterruptedException {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
