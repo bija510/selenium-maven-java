@@ -1,7 +1,8 @@
-package com.pom.traditional.design;
+package com.pom.tests;
 
 import org.testng.annotations.Test;
 
+import com.pom.pages.PageFactoryRegisterPage;
 import com.qa.utils.Base;
 
 public class PageFactoryRegisterTest extends Base {

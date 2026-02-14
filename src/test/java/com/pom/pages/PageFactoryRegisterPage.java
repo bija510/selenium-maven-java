@@ -1,4 +1,4 @@
-package com.pom.traditional.design;
+package com.pom.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,8 +1,9 @@
-package com.pom.traditional.design;
+package com.pom.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.pom.pages.RegisterPomPage;
 import com.qa.utils.Base;
 
 public class RegisterPomTest extends Base{
